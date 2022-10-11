@@ -1,0 +1,6 @@
+import { Car } from '../entitymodels/car';
+import { ResponseModel } from './responseModel';
+
+export interface CarResponseModel extends ResponseModel {
+    data: Car[];
+}
