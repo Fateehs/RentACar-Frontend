@@ -1,13 +1,17 @@
-<table class="table">
-    <thead>
-        <tr>
-            <th>Id</th>
-            <th>Brand Name</th>
-        </tr>
-    </thead>
-
-    <tr *ngFor="let item of brands">
-        <td>{{item.brandId}}</td>
-        <td>{{item.brandName}}</td>
-    </tr>
-</table>
+<ul class="list-group">
+  <li
+    (click)="setCurrentDefaultBrand()"
+    routerLink="/cars"
+    [class]="getAllBrandClass()"
+  >
+    Tüm Markaları Listele
+  </li>
+  <li
+    (click)="setCurrentBrandClass(brand)"
+    *nGFor="let brand of brands"
+    routerLink="/cars/brand/{{ brand.brandId }}"
+    [class]="getCurrentBrandClass(brand)"
+  >
+    {{brand.brandName}}
+  </li>
+</ul>

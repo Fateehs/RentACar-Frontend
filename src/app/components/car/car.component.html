@@ -1,23 +1,18 @@
-<table class="table">
-    <thead>
-        <tr>
-            <th>Id</th>
-            <th>Car Name</th>
-            <th>Brand Id</th>
-            <th>Color Id</th>
-            <th>Model Year</th>
-            <th>Daily Price</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-
-    <tr *ngFor="let item of cars">
-        <td>{{item.carId}}</td>
-        <td>{{item.carName}}</td>
-        <td>{{item.brandName}}</td>
-        <td>{{item.colorName}}</td>
-        <td>{{item.modelYear}}</td>
-        <td>{{item.dailyPrice}}</td>
-        <td>{{item.description}}</td>
-    </tr>
-</table>
+<thead>
+  <tr>
+    <td>Id</td>
+    <td>Marka</td>
+    <td>Renk</td>
+    <td>Açıklama</td>
+  </tr>
+</thead>
+<tr
+  *ngFor="let car of cars"
+  (click)="setCurrentCar(car)"
+  routerLink="cars/car/{{ car.carId }}"
+>
+  <td>{{ car.carId }}</td>
+  <td>{{ car.brandName }}</td>
+  <td>{{ car.colorName }}</td>
+  <td>{{ car.carName }}</td>
+</tr>
