@@ -1,17 +1,11 @@
 <ul class="list-group">
+  <li routerLink="/cars" [class]="getAllBrandClass()">Tüm Markalar</li>
   <li
-    (click)="setCurrentDefaultBrand()"
-    routerLink="/cars"
-    [class]="getAllBrandClass()"
-  >
-    Tüm Markaları Listele
-  </li>
-  <li
-    (click)="setCurrentBrandClass(brand)"
-    *nGFor="let brand of brands"
-    routerLink="/cars/brand/{{ brand.brandId }}"
+    (click)="setCurrentBrand(brand)"
+    routerLink="cars/brand/{{ brand.brandId }}"
+    *ngFor="let brand of brands"
     [class]="getCurrentBrandClass(brand)"
   >
-    {{brand.brandName}}
+    {{ brand.brandName }}
   </li>
 </ul>
