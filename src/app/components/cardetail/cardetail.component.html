@@ -1,22 +1,22 @@
 <table class="table">
-  <thead>
-    <tr>
-      <td>Id</td>
-      <td>Marka</td>
-      <td>Renk</td>
-      <td>Açıklama</td>
+    <thead>
+      <tr>
+        <td>Id</td>
+        <td>Marka</td>
+        <td>Renk</td>
+        <td>Açıklama</td>
+      </tr>
+    </thead>
+    <tr *ngFor="let carDetail of cars">
+      <td>{{ carDetail.carId }}</td>
+      <td>{{ carDetail.brandName }}</td>
+      <td>{{ carDetail.colorName }}</td>
+      <td>{{ carDetail.carName }}</td>
+      <td *ngFor="let carImagePath of carImages">
+        <img
+          src="{{ imageUrl }}{{ carImagePath.ImagePath }}"
+          alt="{{ carDetail.carName }}"
+        />
+      </td>
     </tr>
-  </thead>
-  <tr *ngFor="let car of cars">
-    <td>{{ car.carId }}</td>
-    <td>{{ car.brandName }}</td>
-    <td>{{ car.colorName }}</td>
-    <td>{{ car.carName }}</td>
-    <td *ngFor="let carImage of carImages">
-      <img
-        src="{{ imageUrl }}{{ carImage.imagePath }}"
-        alt="{{ car.carName }}"
-      />
-    </td>
-  </tr>
-</table>
+  </table>
