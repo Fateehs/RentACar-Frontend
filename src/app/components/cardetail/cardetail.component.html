@@ -1,22 +1,19 @@
-<table class="table">
-    <thead>
-      <tr>
-        <td>Id</td>
-        <td>Marka</td>
-        <td>Renk</td>
-        <td>Açıklama</td>
-      </tr>
-    </thead>
-    <tr *ngFor="let carDetail of cars">
-      <td>{{ carDetail.carId }}</td>
-      <td>{{ carDetail.brandName }}</td>
-      <td>{{ carDetail.colorName }}</td>
-      <td>{{ carDetail.carName }}</td>
-      <td *ngFor="let carImagePath of carImages">
-        <img
-          src="{{ imageUrl }}{{ carImagePath.ImagePath }}"
-          alt="{{ carDetail.carName }}"
-        />
-      </td>
+<table class="table" *ngIf="carDetail">
+  <thead>
+    <tr>
+      <td>Id</td>
+      <td>Marka</td>
+      <td>Renk</td>
+      <td>Açıklama</td>
     </tr>
-  </table>
+  </thead>
+  <tr>
+    <td>{{ carDetail.carId }}</td>
+    <td>{{ carDetail.brandName }}</td>
+    <td>{{ carDetail.colorName }}</td>
+    <td>{{ carDetail.carName }}</td>
+    <td *ngFor="let carImagePath of carDetail.imagePath">
+      <img [src]="getImagePath(carImagePath)" alt="{{ carDetail.carName }}" />
+    </td>
+  </tr>
+</table>

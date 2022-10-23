@@ -1,8 +1,10 @@
+import { CarImage } from "./carImage";
+
 export interface CarDetailDto {
     carId: number;
     brandId: number;
     colorId: number;
-    ImagePath?: string[];
+    imagePath: CarImage[];
     carName: string;
     brandName: string;
     colorName: string;
