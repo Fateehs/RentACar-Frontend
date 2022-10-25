@@ -13,7 +13,14 @@
     <td>{{ carDetail.colorName }}</td>
     <td>{{ carDetail.carName }}</td>
     <td *ngFor="let carImagePath of carDetail.imagePath">
-      <img [src]="getImagePath(carImagePath)" alt="{{ carDetail.carName }}" />
+      <img [src]="getImagePath(carImagePath)" alt="{{ carDetail.carName }}" width="200" height="100" />
     </td>
   </tr>
 </table>
+<!-- <table class ="table" *ngIf="carImages">
+  <thead>
+    <tr>
+      <td>{{carImages}}</td>
+    </tr>
+  </thead>
+</table> -->
