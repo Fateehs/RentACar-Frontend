@@ -1,14 +1,31 @@
+<br />
+<div class="mb-3">
+  <label for="exampleFormControlInput1" class="form-label">
+    <h5>Araç ara</h5>
+  </label>
+  <input type="text" [(ngModel)]="filterText" class="form-control" id="filterText"
+    placeholder="Aramak istediğiniz ifadeyi giriniz">
+</div>
+<br />
 <table class="table">
   <thead>
-      <th>Model</th>
-      <th>Marka</th>
-      <th>Renk</th>
-      <th>Fiyat</th>
+    <th>Model</th>
+    <th>Marka</th>
+    <th>Renk</th>
+    <th>Fiyat</th>
   </thead>
-<tr *ngFor="let car of carDetail">
-  <td (click)="setCurrentCar(car)" routerLink="/cars/detail/{{car.carId}}">{{car.carName}}</td>
-  <td>{{car.brandName}}</td>
-  <td>{{car.colorName}}</td>
-  <td>{{car.dailyPrice}}</td>
-</tr>
+  <tbody>
+    <tr *ngFor="let cars of carDetails | carDetailsFilter : filterText">
+      <td>{{cars.carName}}</td>
+      <td>{{cars.brandName}}</td>
+      <td>{{cars.colorName}}</td>
+      <td>{{cars.dailyPrice | currency}}</td>
+      <td>
+        <button (click)="setCurrentCar(cars)" routerLink="/cars/detail/{{cars.carId}}" type="button"
+          class="btn btn-warning">
+          Detayları İncele
+        </button>
+      </td>
+    </tr>
+  </tbody>
 </table>

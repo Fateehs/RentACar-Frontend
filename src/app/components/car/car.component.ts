@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Car } from 'src/app/models/entitymodels/car/car';
 import { CarDetailDto } from 'src/app/models/entitymodels/car/carDetailDto';
 import { CarService } from 'src/app/services/carservice/car.service';
 
@@ -10,8 +9,9 @@ import { CarService } from 'src/app/services/carservice/car.service';
   styleUrls: ['./car.component.css'],
 })
 export class CarComponent implements OnInit {
-  carDetail: CarDetailDto[] = [];
+  carDetails: CarDetailDto[] = [];
   currentCar: CarDetailDto;
+  filterText: "";
   constructor(
     private carService: CarService,
     private activatedRoute: ActivatedRoute
@@ -37,19 +37,19 @@ export class CarComponent implements OnInit {
 
   getCarDetail() {
     this.carService.getCars().subscribe((response) => {
-      this.carDetail = response.data;
+      this.carDetails = response.data;
     });
   }
 
   getCarsByBrandId(brandId: number) {
     this.carService.getCarsByBrandId(brandId).subscribe((response) => {
-      this.carDetail = response.data;
+      this.carDetails = response.data;
     });
   }
 
   getCarsByColorId(colorId: number) {
     this.carService.getCarsByColorId(colorId).subscribe((response) => {
-      this.carDetail = response.data;
+      this.carDetails = response.data;
     });
   }
   setCurrentCar(car: CarDetailDto) {

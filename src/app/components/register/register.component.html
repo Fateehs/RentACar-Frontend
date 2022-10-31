@@ -1,0 +1,53 @@
+<body class="text-center">
+    <main class="form-signin w-100 m-auto">
+        <form [formGroup]="registerForm">
+            <img class="mb-4" src="https://getbootstrap.com/docs/5.2/assets/brand/bootstrap-logo.svg" alt="" width="72"
+                height="57">
+            <h1 class="h3 mb-3 fw-normal">Register Form</h1>
+
+            <div class="mb-3">
+                <div class="form-floating">
+                    <input formControlName="firstName" type="firstName" class="form-control" id="floatingInput"
+                        placeholder="Firstname">
+                    <label for="floatingInput">First name</label>
+                </div>
+            </div>
+            <div class="mb-3">
+                <div class="form-floating">
+                    <input formControlName="lastName" type="lastName" class="form-control" id="floatingInput"
+                        placeholder="Lastname">
+                    <label for="floatingInput">Last name</label>
+                </div>
+            </div>
+            <div class="mb-3">
+                <div class="form-floating">
+                    <input formControlName="email" type="email" class="form-control" id="floatingInput"
+                        placeholder="name@example.com">
+                    <label for="floatingInput">Email address</label>
+                </div>
+            </div>
+            <div class="mb-3">
+                <div class="form-floating">
+                    <input formControlName="password" type="password" class="form-control" id="floatingPassword"
+                        placeholder="Password">
+                    <label for="floatingPassword">Password</label>
+                </div>
+            </div>
+
+            <div class="checkbox mb-3">
+                <label>
+                    <input type="checkbox" value="remember-me">
+                    <h6>RentACar sitesinden gelecek haber ve duyuruların mail adresim yoluyla iletilmesine izin
+                        veriyorum.
+                    </h6>
+                </label>
+            </div>
+            <div class="mb-3"><button class="w-100 btn btn-lg btn-primary" (click)="register()">Register</button></div>
+            <div class="mb-3">
+                <h5>Or</h5>
+            </div>
+            <button class="w-100 btn btn-lg btn-warning" routerLink="/login">Sign in</button>
+            <p class="mt-3 mb-3 text-muted">&copy; RentACar 2017–2022</p>
+        </form>
+    </main>
+</body>
