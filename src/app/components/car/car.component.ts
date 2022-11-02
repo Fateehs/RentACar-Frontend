@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { BASE_URL } from 'src/app/models/constants/urls';
 import { CarDetailDto } from 'src/app/models/entitymodels/car/carDetailDto';
+import { CarImage } from 'src/app/models/entitymodels/car/carImage';
 import { CarService } from 'src/app/services/carservice/car.service';
 
 @Component({

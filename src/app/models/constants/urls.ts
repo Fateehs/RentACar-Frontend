@@ -8,5 +8,5 @@ export const REGISTER_URL = AUTH_URL + 'register';
 export const LOGIN_URL = AUTH_URL + 'login';
 
 // CAR MANAGEMENT
-export const CARS_URL = API_URL + 'cars'
+export const CARS_URL = API_URL + 'cars/'
 export const CARADD_URL = CARS_URL + 'add'

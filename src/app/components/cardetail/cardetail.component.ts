@@ -41,7 +41,6 @@ export class CardetailComponent implements OnInit {
   }
 
   getImagePath(carImage:CarImage){
-    console.log(carImage)
     return BASE_URL + carImage.imagePath
   }
 
