@@ -1,10 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CarAddComponent } from './components/car-add/car-add.component';
-import { CarDetailComponent } from './components/cardetail/cardetail.component';
-import { CarDetailsComponent } from './components/cardetails/cardetails.component';
-import { LoginComponent } from './components/login/login.component';
-import { RegisterComponent } from './components/register/register.component';
+import { AddCarComponent } from './components/admin/pages/adds/car-add/add-car.component';
+import { CarDetailsComponent } from './components/public/pages/cardetails/cardetails.component';
+import { LoginComponent } from './components/public/pages/login/login.component';
+import { RegisterComponent } from './components/public/pages/register/register.component';
 import { LoginGuard } from './guards/login.guard';
 
 const routes: Routes = [
@@ -14,7 +13,7 @@ const routes: Routes = [
   { path: 'car-details/color/:colorId', component: CarDetailsComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'cars/add', component: CarAddComponent, canActivate: [LoginGuard] },
+  { path: 'cars/add', component: AddCarComponent, canActivate: [LoginGuard] },
 ];
 
 @NgModule({

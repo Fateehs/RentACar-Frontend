@@ -1,0 +1,9 @@
+<div class="d-flex justify-content-between">
+    <select class="form-select" [(ngModel)]="currentColorId">
+        <option value="undefined">Renk Seç</option>
+        <option *ngFor="let color of colors" [value]="color.colorId">
+            {{color.colorName}}
+        </option>
+    </select>
+    <button class="button-34" style="height: 40px; font-size: 14px; width: 100px; margin-left: 5px;" role="button" (click)="routeToCarDetailsPageByColorId()">Search</button>
+</div>
