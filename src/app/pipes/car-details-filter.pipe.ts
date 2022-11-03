@@ -1,15 +1,16 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { CarDetailDto } from '../models/entitymodels/car/carDetailDto';
+import { CarDetailDTO } from '../models/entitymodels/car/car-detail-dto';
+
 
 @Pipe({
   name: 'carDetailsFilter',
 })
 export class CarDetailsFilterPipe implements PipeTransform {
-  transform(value: CarDetailDto[], filterText: string): CarDetailDto[] {
+  transform(value: CarDetailDTO[], filterText: string): CarDetailDTO[] {
     filterText = filterText ? filterText.toLocaleLowerCase() : '';
     return filterText
       ? value.filter(
-          (cd: CarDetailDto) =>
+          (cd: CarDetailDTO) =>
             cd.carName.toLocaleLowerCase().indexOf(filterText) !== -1
         )
       : value;

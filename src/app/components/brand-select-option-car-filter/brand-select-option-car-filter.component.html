@@ -1,0 +1,9 @@
+<div class="d-flex justify-content-between">
+    <select class="form-select" [(ngModel)]="currentBrandId">
+        <option value="undefined">Marka Seç</option>
+        <option *ngFor="let brand of brands" [value]="brand.brandId">
+            {{brand.brandName}}
+        </option>
+    </select>
+    <button class="btn btn-success" (click)="routeToCarDetailsPageByBrandId()">Filtrele</button>
+</div>

@@ -1,6 +1,6 @@
 import { CarImage } from "./carImage";
 
-export interface CarDetailDto {
+export interface CarDetailDTO {
     carId: number;
     brandId: number;
     colorId: number;

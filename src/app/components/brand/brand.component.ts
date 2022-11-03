@@ -13,11 +13,11 @@ export class BrandComponent implements OnInit {
   constructor(private brandService: BrandService) {}
 
   ngOnInit(): void {
-    this.getBrands();
+    this.getAll();
   }
 
-  getBrands() {
-    this.brandService.getBrands().subscribe((response) => {
+  getAll() {
+    this.brandService.getAll().subscribe((response) => {
       this.brands = response.data;
     });
   }

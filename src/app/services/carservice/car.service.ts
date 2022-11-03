@@ -1,44 +1,100 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 import { Observable } from 'rxjs';
-import { CARADD_URL } from 'src/app/models/constants/urls';
+import {
+  CARADD_URL,
+  CARDEL_URL,
+  CARUPD_URL,
+  GETCARBYID_URL,
+  GETCARDETAILBYID_URL,
+  GETCARDETAILS_URL,
+  GETCARS_URL,
+  GETDETAILSBYBRANDID_URL,
+  GETDETAILSBYCOLORID_URL,
+} from 'src/app/models/constants/urls';
 import { Car } from 'src/app/models/entitymodels/car/car';
-import { CarDetailDto } from 'src/app/models/entitymodels/car/carDetailDto';
+import { CarDetailDTO } from 'src/app/models/entitymodels/car/car-detail-dto';
 import { ListResponseModel } from 'src/app/models/responsemodels/listResponseModel';
 import { ResponseModel } from 'src/app/models/responsemodels/responseModel';
 import { SingleResponseModel } from 'src/app/models/responsemodels/singleResponseModel';
+import { TemplatesService } from '../templatesservice/templates.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class CarService {
-  constructor(private httpClient: HttpClient) {}
+  constructor(
+    private httpClient: HttpClient,
+    private toastrService: ToastrService,
+    private templatesService: TemplatesService
+  ) {}
 
-  apiUrl = 'https://localhost:44315/api/';
+  add(car: Car) {
+    this.httpClient.post<ResponseModel>(CARADD_URL, car).subscribe(
+      (respone) => {
+        this.toastrService.success(respone.message);
+        window.location.reload();
+      },
+      (errorResponse) => this.templatesService.errorResponse(errorResponse)
+    );
+  }
 
-  getCars(): Observable<ListResponseModel<CarDetailDto>> {
-    let newPath = this.apiUrl + 'cars/getcardetails';
-    return this.httpClient.get<ListResponseModel<CarDetailDto>>(newPath);
+  update(car: Car) {
+    this.httpClient.post<ResponseModel>(CARUPD_URL, car).subscribe(
+      (response) => {
+        this.toastrService.success(response.message);
+        window.location.reload();
+      },
+      (errorResponse) => this.templatesService.errorResponse(errorResponse)
+    );
   }
-  getCarsByColorId(
-    colorId: number
-  ): Observable<ListResponseModel<CarDetailDto>> {
-    let newPath = this.apiUrl + 'cars/getcarsbycolorid?colorId=' + colorId;
-    return this.httpClient.get<ListResponseModel<CarDetailDto>>(newPath);
+
+  delete(car: Car) {
+    this.httpClient.post<ResponseModel>(CARDEL_URL, car).subscribe(
+      (response) => {
+        this.toastrService.success(response.message);
+        window.location.reload();
+      },
+      (errorResponse) => this.templatesService.errorResponse(errorResponse)
+    );
   }
-  getCarsByBrandId(
+
+  getAll(): Observable<ListResponseModel<Car>> {
+    return this.httpClient.get<ListResponseModel<Car>>(GETCARS_URL);
+  }
+
+  getById(carId: number): Observable<SingleResponseModel<Car>> {
+    return this.httpClient.get<SingleResponseModel<Car>>(
+      GETCARBYID_URL + carId
+    );
+  }
+
+  getDetailById(carId: number): Observable<SingleResponseModel<CarDetailDTO>> {
+    return this.httpClient.get<SingleResponseModel<CarDetailDTO>>(
+      GETCARDETAILBYID_URL + carId
+    );
+  }
+
+  getDetails(): Observable<ListResponseModel<CarDetailDTO>> {
+    return this.httpClient.get<ListResponseModel<CarDetailDTO>>(
+      GETCARDETAILS_URL
+    );
+  }
+
+  getDetailsByBrandId(
     brandId: number
-  ): Observable<ListResponseModel<CarDetailDto>> {
-    let newPath = this.apiUrl + 'cars/getcarsbybrandid?brandId=' + brandId;
-    return this.httpClient.get<ListResponseModel<CarDetailDto>>(newPath);
-  }
-  getCarsByCarId(carId: number): Observable<SingleResponseModel<CarDetailDto>> {
-    let newPath = this.apiUrl + 'cars/getcardetailsbycarid?carId=' + carId;
-    return this.httpClient.get<SingleResponseModel<CarDetailDto>>(newPath);
+  ): Observable<ListResponseModel<CarDetailDTO>> {
+    return this.httpClient.get<ListResponseModel<CarDetailDTO>>(
+      GETDETAILSBYBRANDID_URL + brandId
+    );
   }
 
-  add(car: Car): Observable<ResponseModel> {
-    let carAddPath = CARADD_URL;
-    return this.httpClient.post<ResponseModel>(carAddPath, car);
+  getDetailsByColorId(
+    colorId: number
+  ): Observable<ListResponseModel<CarDetailDTO>> {
+    return this.httpClient.get<ListResponseModel<CarDetailDTO>>(
+      GETDETAILSBYCOLORID_URL + colorId
+    );
   }
 }
