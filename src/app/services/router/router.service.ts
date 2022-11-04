@@ -1,9 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import {
+  CarDetailByIdPath,
   CarDetailsByBrandIdPath,
   CarDetailsByColorIdPath,
   CarDetailsPath,
+  HomePagePath,
+  PayPath,
+  RentByCarIdPath,
 } from 'src/app/models/constants/paths';
 
 @Injectable({
@@ -12,8 +16,12 @@ import {
 export class RouterService {
   constructor(private router: Router) {}
 
-  carDetailsPage(){
-    this.router.navigate([CarDetailsPath])
+  homePage(){
+    this.router.navigate([HomePagePath])
+  }
+
+  carDetailsPage() {
+    this.router.navigate([CarDetailsPath]);
   }
 
   carDetailsPageByBrandId(brandId: number) {
@@ -26,5 +34,19 @@ export class RouterService {
     if (colorId > 0) {
       this.router.navigate([CarDetailsByColorIdPath + colorId]);
     }
+  }
+
+  rentPage(carId: number) {
+    if (carId > 0) {
+      this.router.navigate([RentByCarIdPath + carId]);
+    }
+  }
+
+  carDetailPageById(carId: number) {
+    this.router.navigate([CarDetailByIdPath + carId]);
+  }
+
+  paymentPage(){
+    this.router.navigate([PayPath])
   }
 }

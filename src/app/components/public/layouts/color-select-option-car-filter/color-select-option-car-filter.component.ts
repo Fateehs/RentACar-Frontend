@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ColorId } from 'src/app/models/constants/entity-ids';
 import { Color } from 'src/app/models/entitymodels/color';
-import { ColorService } from 'src/app/services/colorservice/color.service';
-import { RouterService } from 'src/app/services/routerservice/router.service';
+import { ColorService } from 'src/app/services/color/color.service';
+import { RouterService } from 'src/app/services/router/router.service';
 
 @Component({
   selector: 'app-color-select-option-car-filter',

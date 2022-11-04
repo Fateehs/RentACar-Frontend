@@ -18,7 +18,7 @@ import { CarDetailDTO } from 'src/app/models/entitymodels/car/car-detail-dto';
 import { ListResponseModel } from 'src/app/models/responsemodels/listResponseModel';
 import { ResponseModel } from 'src/app/models/responsemodels/responseModel';
 import { SingleResponseModel } from 'src/app/models/responsemodels/singleResponseModel';
-import { TemplatesService } from '../templatesservice/templates.service';
+import { TemplatesService } from '../template/templates.service';
 
 @Injectable({
   providedIn: 'root',

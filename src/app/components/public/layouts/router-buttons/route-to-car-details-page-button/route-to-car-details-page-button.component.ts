@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from 'src/app/services/authservice/auth.service';
-import { RouterService } from 'src/app/services/routerservice/router.service';
+import { AuthService } from 'src/app/services/auth/auth.service';
+import { RouterService } from 'src/app/services/router/router.service';
 import { PublicChildComponentBaseComponent } from '../../../bases/public-child-component-base/public-child-component-base.component';
 
 @Component({

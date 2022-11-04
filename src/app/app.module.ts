@@ -24,6 +24,10 @@ import { RouteToCarDetailsPageButtonComponent } from './components/public/layout
 import { CommonChildComponentBaseComponent } from './components/public/bases/common-child-component-base/common-child-component-base.component';
 import { PublicChildComponentBaseComponent } from './components/public/bases/public-child-component-base/public-child-component-base.component';
 import { AddCarComponent } from './components/admin/pages/adds/car-add/add-car.component';
+import { RouteToRentPageButtonComponent } from './components/public/layouts/router-buttons/route-to-rent-page-button/route-to-rent-page-button.component';
+import { RoteToCarDetailPageButtonComponent } from './components/public/layouts/router-buttons/rote-to-car-detail-page-button/rote-to-car-detail-page-button.component';
+import { RouteToCarDetailPageButtonComponent } from './components/public/layouts/router-buttons/route-to-car-detail-page-button/route-to-car-detail-page-button.component';
+import { RentComponent } from './components/user/pages/rent/rent.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +48,10 @@ import { AddCarComponent } from './components/admin/pages/adds/car-add/add-car.c
     RouteToCarDetailsPageButtonComponent,
     CommonChildComponentBaseComponent,
     PublicChildComponentBaseComponent,
+    RouteToRentPageButtonComponent,
+    RoteToCarDetailPageButtonComponent,
+    RouteToCarDetailPageButtonComponent,
+    RentComponent,
   ],
   imports: [
     BrowserModule,

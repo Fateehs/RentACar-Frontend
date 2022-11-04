@@ -1,0 +1,19 @@
+<div *ngIf="carDetailDTO">
+    <div class="border">
+        <app-car-images-slider-by-car-id [currentCarIdFromParent]="carDetailDTO.carId">
+        </app-car-images-slider-by-car-id>
+    </div>
+    <div class="card text-center">
+        <div class="card-header">
+            {{carDetailDTO.brandName}}
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">{{carDetailDTO.carName}}</h5>
+            <app-route-to-rent-page-button classFromParent="btn btn-success w-25"
+                [currentCarIdFromParent]="carDetailDTO.carId"></app-route-to-rent-page-button>
+        </div>
+        <div class="card-footer">
+            <strong>{{carDetailDTO.dailyPrice|currency}}</strong>
+        </div>
+    </div>
+</div>

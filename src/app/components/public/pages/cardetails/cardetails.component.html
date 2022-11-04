@@ -1,7 +1,7 @@
 <div>
     <div>
-        <input type="text" name="filterText" class="form-control" placeholder="Search"
-            [(ngModel)]="filterText" style="margin-bottom: 14px;" id="filterText">
+        <input type="text" name="filterText" class="form-control" placeholder="Search" [(ngModel)]="filterText"
+            style="margin-bottom: 14px;" id="filterText">
     </div>
     <div class="mt-1">
         <app-brand-and-color-select-option-car-filter></app-brand-and-color-select-option-car-filter>
@@ -22,3 +22,13 @@
                 <li class="list-group-item">{{carDetailDTO.colorName}}</li>
                 <li class="list-group-item"><strong>{{carDetailDTO.dailyPrice|currency}}</strong></li>
             </ul>
+
+            <div class="card-footer">
+                <app-route-to-car-detail-page-button classFromParent="button-34"
+                    [currentCarIdFromParent]="carDetailDTO.carId"></app-route-to-car-detail-page-button>
+                <app-route-to-rent-page-button classFromParent="button-34"
+                    [currentCarIdFromParent]="carDetailDTO.carId"></app-route-to-rent-page-button>
+            </div>
+        </div>
+    </div>
+</div>
