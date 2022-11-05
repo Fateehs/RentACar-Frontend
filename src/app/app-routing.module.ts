@@ -5,6 +5,7 @@ import { CarDetailComponent } from './components/public/pages/cardetail/cardetai
 import { CarDetailsComponent } from './components/public/pages/cardetails/cardetails.component';
 import { LoginComponent } from './components/public/pages/login/login.component';
 import { RegisterComponent } from './components/public/pages/register/register.component';
+import { PayComponent } from './components/user/pages/pay/pay.component';
 import { RentComponent } from './components/user/pages/rent/rent.component';
 import { LoginGuard } from './guards/login.guard';
 import { CarId } from './models/constants/entity-ids';
@@ -17,6 +18,7 @@ const routes: Routes = [
   { path: 'car-details/color/:colorId', component: CarDetailsComponent },
   { path: CarDetailByIdPath + ':' + CarId, component: CarDetailComponent },
   { path: RentByCarIdPath + ':' + CarId, component: RentComponent },
+  { path: 'pay', component: PayComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
   { path: 'cars/add', component: AddCarComponent, canActivate: [LoginGuard] },
