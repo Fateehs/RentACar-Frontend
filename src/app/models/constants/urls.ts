@@ -47,6 +47,7 @@ export const GETCUSTOMERBYUSERID_URL = CUSTOMER_URL + 'getbyuserid?userId='
 // PAYMENT MANAGEMENT
 export const PAYMENT_URL = API_URL + 'payments/'
 export const PAY_URL = PAYMENT_URL + 'pay'
-export const DELPAY_URL = PAYMENT_URL + 'delete'
+export const PAYADD_URL = PAYMENT_URL + 'add'
+export const PAYDEL_URL = PAYMENT_URL + 'delete'
 export const GETPAYCUSTOMERID_URL = PAYMENT_URL + 'getallbycustomerid?customerId='
 export const CHECKCARD_URL = PAYMENT_URL + 'checkIfThisCardIsAlreadySavedForThisCustomer'
