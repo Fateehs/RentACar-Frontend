@@ -1,0 +1,37 @@
+<div>
+    <div>
+        <app-pay-with-saved-cards></app-pay-with-saved-cards>
+    </div>
+    <hr>
+    <div class="mt-4">
+        <form [formGroup]="payFormGroup">
+            <div>
+                <label for="fullName">Kart Üzerindeki İsim</label>
+                <input type="text" id="fullName" placeholder="Kart Üzerindeki Tam İsim" class="form-control"
+                    formControlName="fullName">
+            </div>
+            <div class="mt-2">
+                <label for="cardNumber">Kart Numarası</label>
+                <input type="text" id="cardNumber" placeholder="Kart Numarası" class="form-control"
+                    formControlName="cardNumber">
+            </div>
+            <div class="mt-2 row">
+                <div class="col">
+                    <label for="expiryMonth">Son Kullanım Ayı</label>
+                    <app-small-number-input id="expiryMonth" [minValue]="1" [maxValue]="12" placeholder="Son Kullanım Ayı" formControlName="expiryMonth"></app-small-number-input> 
+                </div>
+                <div class="col">
+                    <label for="expiryYear">Son Kullanım Yılı</label>
+                    <app-small-number-input id="expiryYear" [minValue]="1" [maxValue]="12" placeholder="Son Kullanım Yılı" formControlName="expiryYear"></app-small-number-input>
+                </div>
+            </div>
+            <div class="mt-2">
+                <label for="cvv">CVV</label>
+                <input type="text" id="cvv" placeholder="CVV" class="form-control" formControlName="cvv">
+            </div>
+            <div class="mt-2">
+                <button class="btn btn-success" (click)="pay()">Ödemeyi Tamamla</button>
+            </div>
+        </form>
+    </div>
+</div>

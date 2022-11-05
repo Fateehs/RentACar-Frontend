@@ -1,0 +1,5 @@
+<div class="d-flex justify-content-between">
+    <button class="btn btn-success" (click)="decrease()">-</button>
+    <input type="number" [(ngModel)]="value" [disabled]="disabled" [placeholder]="placeholder" class="form-control" />
+    <button class="btn btn-success" (click)="increase()">+</button>
+</div>

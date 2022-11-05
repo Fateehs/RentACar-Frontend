@@ -3,8 +3,9 @@ import { Injectable } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import {
   CHECKCARD_URL,
-  DELPAY_URL,
+  PAYDEL_URL,
   GETPAYCUSTOMERID_URL,
+  PAYADD_URL,
   PAYMENT_URL,
   PAY_URL,
 } from 'src/app/models/constants/urls';
@@ -28,7 +29,7 @@ export class PaymentService {
   }
 
   add(payment: Payment) {
-    this.htttpClient.post<ResponseModel>(PAYMENT_URL, payment).subscribe(
+    this.htttpClient.post<ResponseModel>(PAYADD_URL, payment).subscribe(
       (response) => {
         this.toastrService.success(response.message);
       },
@@ -37,7 +38,7 @@ export class PaymentService {
   }
 
   delete(payment: Payment) {
-    this.htttpClient.post<ResponseModel>(DELPAY_URL, payment).subscribe(
+    this.htttpClient.post<ResponseModel>(PAYDEL_URL, payment).subscribe(
       (response) => {
         this.toastrService.success(response.message);
         window.location.reload();
