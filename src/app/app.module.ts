@@ -28,6 +28,11 @@ import { RouteToRentPageButtonComponent } from './components/public/layouts/rout
 import { RoteToCarDetailPageButtonComponent } from './components/public/layouts/router-buttons/rote-to-car-detail-page-button/rote-to-car-detail-page-button.component';
 import { RouteToCarDetailPageButtonComponent } from './components/public/layouts/router-buttons/route-to-car-detail-page-button/route-to-car-detail-page-button.component';
 import { RentComponent } from './components/user/pages/rent/rent.component';
+import { PayComponent } from './components/user/pages/pay/pay.component';
+import { PayWithSavedCardsComponent } from './components/user/layouts/pay-with-saved-cards/pay-with-saved-cards.component';
+import { SmallNumberInputComponent } from './form-controls/small-number-input/small-number-input.component';
+import { DeletePaymentComponent } from './components/user/layouts/deletes/delete-payment/delete-payment.component';
+import { UserChildComponentBaseComponent } from './components/user/bases/user-child-component-base/user-child-component-base.component';
 
 @NgModule({
   declarations: [
@@ -52,6 +57,11 @@ import { RentComponent } from './components/user/pages/rent/rent.component';
     RoteToCarDetailPageButtonComponent,
     RouteToCarDetailPageButtonComponent,
     RentComponent,
+    PayComponent,
+    PayWithSavedCardsComponent,
+    SmallNumberInputComponent,
+    DeletePaymentComponent,
+    UserChildComponentBaseComponent,
   ],
   imports: [
     BrowserModule,
