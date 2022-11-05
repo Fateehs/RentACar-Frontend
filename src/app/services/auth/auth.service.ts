@@ -66,4 +66,9 @@ export class AuthService {
     let userId: number = decodedToken[nameidentifierString];
     return userId;
   }
+
+  loggedIn() {
+    let token = this.getToken;
+    return !this.jwtHelperService.isTokenExpired(token);
+  }
 }
