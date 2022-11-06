@@ -1,9 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import {
+  BrandAddPath,
+  BrandDeletePath,
+  BrandUpdatePath,
   CarAddPath,
   CarDeletePath,
   CarUpdatePath,
+  ColorAddPath,
+  ColorDeletePath,
+  ColorUpdatePath,
 } from 'src/app/models/constants/paths';
 
 @Component({
@@ -24,5 +30,29 @@ export class EntityManagementRouterButtonsPageComponent {
 
   routeToCarDeletePage() {
     this.router.navigate([CarDeletePath]);
+  }
+
+  routeToColorAddPage() {
+    this.router.navigate([ColorAddPath]);
+  }
+
+  routeToColorUpdatePage() {
+    this.router.navigate([ColorUpdatePath]);
+  }
+
+  routeToColorDeletePage() {
+    this.router.navigate([ColorDeletePath]);
+  }
+
+  routeToBrandAddPage() {
+    this.router.navigate([BrandAddPath]);
+  }
+
+  routeToBrandUpdatePage() {
+    this.router.navigate([BrandUpdatePath]);
+  }
+
+  routeToBrandDeletePage() {
+    this.router.navigate([BrandDeletePath]);
   }
 }
