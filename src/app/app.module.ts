@@ -23,7 +23,7 @@ import { ColorSelectOptionCarFilterComponent } from './components/public/layouts
 import { RouteToCarDetailsPageButtonComponent } from './components/public/layouts/router-buttons/route-to-car-details-page-button/route-to-car-details-page-button.component';
 import { CommonChildComponentBaseComponent } from './components/public/bases/common-child-component-base/common-child-component-base.component';
 import { PublicChildComponentBaseComponent } from './components/public/bases/public-child-component-base/public-child-component-base.component';
-import { AddCarComponent } from './components/admin/pages/adds/car-add/add-car.component';
+import { AddCarComponent } from './components/admin/pages/management/adds/add-car/add-car.component';
 import { RouteToRentPageButtonComponent } from './components/public/layouts/router-buttons/route-to-rent-page-button/route-to-rent-page-button.component';
 import { RoteToCarDetailPageButtonComponent } from './components/public/layouts/router-buttons/rote-to-car-detail-page-button/rote-to-car-detail-page-button.component';
 import { RouteToCarDetailPageButtonComponent } from './components/public/layouts/router-buttons/route-to-car-detail-page-button/route-to-car-detail-page-button.component';
@@ -33,6 +33,16 @@ import { PayWithSavedCardsComponent } from './components/user/layouts/pay-with-s
 import { SmallNumberInputComponent } from './form-controls/small-number-input/small-number-input.component';
 import { DeletePaymentComponent } from './components/user/layouts/deletes/delete-payment/delete-payment.component';
 import { UserChildComponentBaseComponent } from './components/user/bases/user-child-component-base/user-child-component-base.component';
+import { EntityManagementRouterButtonsPageComponent } from './components/admin/layouts/router-buttons/entity-management-router-buttons-page/entity-management-router-buttons-page.component';
+import { UpdCarComponent } from './components/admin/pages/management/updates/upd-car/upd-car.component';
+import { AdminChildComponentBaseComponent } from './components/admin/bases/admin-child-component-base/admin-child-component-base.component';
+import { DelCarComponent } from './components/admin/pages/management/deletes/del-car/del-car.component';
+import { AddBrandComponent } from './components/admin/pages/management/adds/add-brand/add-brand.component';
+import { AddColorComponent } from './components/admin/pages/management/adds/add-color/add-color.component';
+import { DelBrandComponent } from './components/admin/pages/management/deletes/del-brand/del-brand.component';
+import { DelColorComponent } from './components/admin/pages/management/deletes/del-color/del-color.component';
+import { UpdBrandComponent } from './components/admin/pages/management/updates/upd-brand/upd-brand.component';
+import { UpdColorComponent } from './components/admin/pages/management/updates/upd-color/upd-color.component';
 
 @NgModule({
   declarations: [
@@ -62,6 +72,16 @@ import { UserChildComponentBaseComponent } from './components/user/bases/user-ch
     SmallNumberInputComponent,
     DeletePaymentComponent,
     UserChildComponentBaseComponent,
+    EntityManagementRouterButtonsPageComponent,
+    UpdCarComponent,
+    AdminChildComponentBaseComponent,
+    DelCarComponent,
+    AddBrandComponent,
+    AddColorComponent,
+    DelBrandComponent,
+    DelColorComponent,
+    UpdBrandComponent,
+    UpdColorComponent,
   ],
   imports: [
     BrowserModule,
