@@ -11,6 +11,7 @@ import { ToastrService } from 'ngx-toastr';
 import { TemplatesService } from '../template/templates.service';
 import { RouterService } from '../router/router.service';
 import { TokenKey } from 'src/app/models/constants/local-storage-keys';
+import { AdminRole } from 'src/app/models/constants/roles';
 
 @Injectable({
   providedIn: 'root',
@@ -70,5 +71,22 @@ export class AuthService {
   loggedIn() {
     let token = this.getToken;
     return !this.jwtHelperService.isTokenExpired(token);
+  }
+
+  isAdmin() {
+    if (!this.loggedIn()) {
+      return false;
+    }
+    let decodedToken = this.getDecodedToken;
+
+    let roleString = Object.keys(decodedToken).filter((t) =>
+      t.endsWith('role')
+    )[0];
+
+    if (roleString)
+      for (let i = 0; i < decodedToken[roleString].length; i++)
+        if (decodedToken[roleString][i] === AdminRole) return true;
+
+    return false;
   }
 }
