@@ -1,0 +1,23 @@
+<div class="content">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="title">Aracı Sil</h5>
+            </div>
+            <div class="card-body">
+                <form [formGroup]="carDeleteForm">
+                    <div class="mb-3">
+                        <label for="productName">CarId</label>
+                        <div class="form-group">
+                            <input type="number" id="carId" formControlName="carId" class="form-control"
+                                placeholder="Aracın carId değerini yazınız..." />
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="card-footer">
+                <button class="btn btn-fill btn-success" (click)="delete()">Sil</button>
+            </div>
+        </div>
+    </div>
+</div>
