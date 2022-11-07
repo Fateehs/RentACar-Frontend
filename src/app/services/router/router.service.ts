@@ -6,7 +6,10 @@ import {
   CarDetailsByColorIdPath,
   CarDetailsPath,
   HomePagePath,
+  LoginPath,
   PayPath,
+  ProfilePath,
+  RegisterPath,
   RentByCarIdPath,
 } from 'src/app/models/constants/paths';
 
@@ -16,8 +19,8 @@ import {
 export class RouterService {
   constructor(private router: Router) {}
 
-  homePage(){
-    this.router.navigate([HomePagePath])
+  homePage() {
+    this.router.navigate([HomePagePath]);
   }
 
   carDetailsPage() {
@@ -46,7 +49,19 @@ export class RouterService {
     this.router.navigate([CarDetailByIdPath + carId]);
   }
 
-  paymentPage(){
-    this.router.navigate([PayPath])
+  paymentPage() {
+    this.router.navigate([PayPath]);
+  }
+
+  loginPage() {
+    this.router.navigate([LoginPath]);
+  }
+
+  registerPage() {
+    this.router.navigate([RegisterPath]);
+  }
+
+  profilePage() {
+    this.router.navigate([ProfilePath]);
   }
 }
