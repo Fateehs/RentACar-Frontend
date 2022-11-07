@@ -11,7 +11,7 @@ export class PublicChildComponentBaseComponent extends CommonChildComponentBaseC
 
   constructor(public override authService:AuthService) { super(authService)}
 
-  isAuthenticated(){
-    return this.authService.isAuthenticated()
+  loggedIn(){
+    return this.authService.loggedIn()
   }
 }
