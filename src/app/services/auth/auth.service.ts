@@ -1,7 +1,11 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { RegisterModel } from 'src/app/models/entitymodels/auth/registerModel';
-import { LOGIN_URL, REGISTER_URL } from 'src/app/models/constants/urls';
+import {
+  LOGIN_URL,
+  REGISTER_URL,
+  UPDPASS_URL,
+} from 'src/app/models/constants/urls';
 import { SingleResponseModel } from 'src/app/models/responsemodels/singleResponseModel';
 import { TokenModel } from 'src/app/models/entitymodels/auth/tokenModel';
 import { JwtHelperService } from '@auth0/angular-jwt';
@@ -12,6 +16,8 @@ import { TemplatesService } from '../template/templates.service';
 import { RouterService } from '../router/router.service';
 import { TokenKey } from 'src/app/models/constants/local-storage-keys';
 import { AdminRole } from 'src/app/models/constants/roles';
+import { UpdatePasswordDTO } from 'src/app/models/entitymodels/update-password-dto';
+import { ResponseModel } from 'src/app/models/responsemodels/responseModel';
 
 @Injectable({
   providedIn: 'root',
@@ -88,5 +94,22 @@ export class AuthService {
         if (decodedToken[roleString][i] === AdminRole) return true;
 
     return false;
+  }
+
+  updatePassword(updatePasswordDTO: UpdatePasswordDTO) {
+    this.httpClient
+      .post<ResponseModel>(UPDPASS_URL, updatePasswordDTO)
+      .subscribe(
+        (response) => {
+          this.toastrService.success(response.message);
+          window.location.reload();
+        },
+        (errorResponse) => this.templatesService.errorResponse(errorResponse)
+      );
+  }
+
+  logout() {
+    this.localStorageService.remove(TokenKey);
+    window.location.reload();
   }
 }
