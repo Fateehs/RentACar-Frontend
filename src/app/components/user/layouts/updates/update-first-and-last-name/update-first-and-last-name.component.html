@@ -1,0 +1,38 @@
+<!-- Button trigger modal -->
+<div type="button" [class]="classFromParent" data-bs-toggle="modal" data-bs-target="#updateFirstAndLastNameModal"
+    *ngIf="loggedIn()">
+    {{currentUserDTOFromParent.firstName}} {{currentUserDTOFromParent.lastName}} / {{innerHTML}}
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="updateFirstAndLastNameModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Ad-Soyad Güncelle</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+
+                <form [formGroup]="updateFormGroup">
+                    <div>
+                        <label for="firstName">Ad</label>
+                        <input type="text" id="firstName" name="firstName" placeholder="Ad" formControlName="firstName"
+                            class="form-control">
+                    </div>
+                    <div>
+                        <label for="firstName">Soyad</label>
+                        <input type="text" id="lastName" name="lastName" placeholder="Soyad" formControlName="lastName"
+                            class="form-control">
+                    </div>
+                </form>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Kapat</button>
+                <button type="button" class="btn btn-success" (click)="updateFirstAndLastName()">Güncelle</button>
+            </div>
+        </div>
+    </div>
+</div>
