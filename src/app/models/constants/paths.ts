@@ -25,3 +25,10 @@ export const RentByCarIdPath = 'rent/';
 
 // PAYMENT PATHS
 export const PayPath = 'pay';
+
+// AUTH PATHS
+export const LoginPath = 'login';
+export const RegisterPath = 'register';
+
+// PROFILE PATHS
+export const ProfilePath = 'profile';
