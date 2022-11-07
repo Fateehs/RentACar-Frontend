@@ -6,6 +6,7 @@ export const API_URL = BASE_URL + 'api/';
 export const AUTH_URL = API_URL + 'auth/';
 export const REGISTER_URL = AUTH_URL + 'register';
 export const LOGIN_URL = AUTH_URL + 'login';
+export const UPDPASS_URL = AUTH_URL + 'updatepassword'
 
 // CAR MANAGEMENT
 export const CAR_URL = API_URL + 'cars/';
@@ -57,3 +58,9 @@ export const PAYADD_URL = PAYMENT_URL + 'add';
 export const PAYDEL_URL = PAYMENT_URL + 'delete';
 export const GETPAYCUSTOMERID_URL = PAYMENT_URL + 'getallbycustomerid?customerId=';
 export const CHECKCARD_URL = PAYMENT_URL + 'checkIfThisCardIsAlreadySavedForThisCustomer';
+
+// PROFILE MANAGEMENT
+export const USER_URL = API_URL + 'users/'
+export const UPDNAME_URL = USER_URL + 'updatefirstandlastname'
+export const UPDMAIL_URL = USER_URL + 'updateemail'
+export const GETUDTO_URL = USER_URL + 'getdtobyid?id='
