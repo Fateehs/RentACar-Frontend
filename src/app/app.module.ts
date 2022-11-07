@@ -25,7 +25,6 @@ import { CommonChildComponentBaseComponent } from './components/public/bases/com
 import { PublicChildComponentBaseComponent } from './components/public/bases/public-child-component-base/public-child-component-base.component';
 import { AddCarComponent } from './components/admin/pages/management/adds/add-car/add-car.component';
 import { RouteToRentPageButtonComponent } from './components/public/layouts/router-buttons/route-to-rent-page-button/route-to-rent-page-button.component';
-import { RoteToCarDetailPageButtonComponent } from './components/public/layouts/router-buttons/rote-to-car-detail-page-button/rote-to-car-detail-page-button.component';
 import { RouteToCarDetailPageButtonComponent } from './components/public/layouts/router-buttons/route-to-car-detail-page-button/route-to-car-detail-page-button.component';
 import { RentComponent } from './components/user/pages/rent/rent.component';
 import { PayComponent } from './components/user/pages/pay/pay.component';
@@ -43,6 +42,16 @@ import { DelBrandComponent } from './components/admin/pages/management/deletes/d
 import { DelColorComponent } from './components/admin/pages/management/deletes/del-color/del-color.component';
 import { UpdBrandComponent } from './components/admin/pages/management/updates/upd-brand/upd-brand.component';
 import { UpdColorComponent } from './components/admin/pages/management/updates/upd-color/upd-color.component';
+import { RouteToLoginPageButtonComponent } from './components/public/layouts/router-buttons/route-to-login-page-button/route-to-login-page-button.component';
+import { RouteToRegisterPageButtonComponent } from './components/public/layouts/router-buttons/route-to-register-page-button/route-to-register-page-button.component';
+import { RouteToProfilePageButtonComponent } from './components/user/layouts/router-buttons/route-to-profile-page-button/route-to-profile-page-button.component';
+import { ProfileComponent } from './components/user/pages/profile/profile.component';
+import { FindeksPointBoardComponent } from './components/user/layouts/findeks-point-board/findeks-point-board.component';
+import { AccountOptionsComponent } from './components/user/layouts/account-options/account-options.component';
+import { UpdatePasswordComponent } from './components/user/layouts/updates/update-password/update-password.component';
+import { UpdateEmailComponent } from './components/user/layouts/updates/update-email/update-email.component';
+import { UpdateFirstAndLastNameComponent } from './components/user/layouts/updates/update-first-and-last-name/update-first-and-last-name.component';
+import { LogoutButtonComponent } from './components/user/layouts/logout-button/logout-button.component';
 
 @NgModule({
   declarations: [
@@ -64,7 +73,6 @@ import { UpdColorComponent } from './components/admin/pages/management/updates/u
     CommonChildComponentBaseComponent,
     PublicChildComponentBaseComponent,
     RouteToRentPageButtonComponent,
-    RoteToCarDetailPageButtonComponent,
     RouteToCarDetailPageButtonComponent,
     RentComponent,
     PayComponent,
@@ -82,6 +90,16 @@ import { UpdColorComponent } from './components/admin/pages/management/updates/u
     DelColorComponent,
     UpdBrandComponent,
     UpdColorComponent,
+    RouteToLoginPageButtonComponent,
+    RouteToRegisterPageButtonComponent,
+    RouteToProfilePageButtonComponent,
+    ProfileComponent,
+    FindeksPointBoardComponent,
+    AccountOptionsComponent,
+    UpdatePasswordComponent,
+    UpdateEmailComponent,
+    UpdateFirstAndLastNameComponent,
+    LogoutButtonComponent,
   ],
   imports: [
     BrowserModule,
