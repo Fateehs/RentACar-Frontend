@@ -15,10 +15,15 @@ import { CarDetailsComponent } from './components/public/pages/cardetails/cardet
 import { LoginComponent } from './components/public/pages/login/login.component';
 import { RegisterComponent } from './components/public/pages/register/register.component';
 import { PayComponent } from './components/user/pages/pay/pay.component';
+import { ProfileComponent } from './components/user/pages/profile/profile.component';
 import { RentComponent } from './components/user/pages/rent/rent.component';
 import { LoginGuard } from './guards/login.guard';
 import { CarId } from './models/constants/entity-ids';
-import { CarDetailByIdPath, RentByCarIdPath } from './models/constants/paths';
+import {
+  CarDetailByIdPath,
+  ProfilePath,
+  RentByCarIdPath,
+} from './models/constants/paths';
 
 const routes: Routes = [
   { path: '', component: CarDetailsComponent },
@@ -39,7 +44,8 @@ const routes: Routes = [
   { path: 'pay', component: PayComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'entity-management-page', component: EntityManagementRouterButtonsPageComponent,canActivate: [LoginGuard],},
+  { path: 'entity-management-page',component: EntityManagementRouterButtonsPageComponent,canActivate: [LoginGuard],},
+  { path: ProfilePath, component: ProfileComponent, canActivate: [LoginGuard] },
 ];
 
 @NgModule({
