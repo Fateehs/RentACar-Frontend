@@ -9,8 +9,11 @@
         </div>
         <div class="card-body">
             <h5 class="card-title">{{carDetailDTO.carName}}</h5>
+            <p class="card-text">{{carDetailDTO.description}}</p>
+            <p class="card-text">Findeks Point:<strong> {{carDetailDTO.findeksPoint}}</strong></p>
             <app-route-to-rent-page-button classFromParent="btn btn-success w-25"
                 [currentCarIdFromParent]="carDetailDTO.carId"></app-route-to-rent-page-button>
+            
         </div>
         <div class="card-footer">
             <strong>{{carDetailDTO.dailyPrice|currency}}</strong>
