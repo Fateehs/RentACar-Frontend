@@ -1,0 +1,16 @@
+<div class="btn-group" *ngIf="loggedIn()&&currentUserDTO">
+    <img height="50px" width="50px" src="assets/images/profile.jpg">
+    
+    <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+      {{currentUserDTO.firstName}} {{currentUserDTO.lastName}}
+    </button>
+    
+    <ul class="dropdown-menu dropdown-menu-end">
+      <li><app-route-to-profile-page-button classFromParent="dropdown-item"></app-route-to-profile-page-button></li>
+      <li>
+        <hr class="dropdown-divider">
+      </li>
+      <li><app-logout-button classFromParent="dropdown-item"></app-logout-button></li>
+    </ul>
+    
+  </div>
