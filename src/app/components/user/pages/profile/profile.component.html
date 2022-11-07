@@ -1,0 +1,15 @@
+<div *ngIf="currentUserDTO">
+    <h4>Profil Bilgileri</h4>
+    <div>
+        <label for="updateFirstAndLastName">Ad Soyad</label>
+        <app-update-first-and-last-name id="updateFirstAndLastName" [currentUserDTOFromParent]="currentUserDTO"></app-update-first-and-last-name>
+    </div>
+    <div class="mt-2">
+        <label for="updateEmail">Email</label>
+        <app-update-email id="updateEmail" [currentUserDTOFromParent]="currentUserDTO"></app-update-email>
+    </div>
+    <div class="mt-2">
+        <label for="password">Şifre</label>
+        <app-update-password id="password" [currentUserDTOFromParent]="currentUserDTO"></app-update-password>
+    </div>
+</div>
