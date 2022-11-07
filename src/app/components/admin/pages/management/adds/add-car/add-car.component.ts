@@ -28,6 +28,7 @@ export class AddCarComponent implements OnInit {
       modelYear: ['', Validators.required],
       dailyPrice: ['', Validators.required],
       description: ['', Validators.required],
+      findeksPoint: ['', Validators.required]
     });
   }
 

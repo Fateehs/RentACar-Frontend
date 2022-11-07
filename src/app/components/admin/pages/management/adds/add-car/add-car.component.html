@@ -7,39 +7,44 @@
             <div class="card-body">
                 <form [formGroup]="carAddForm">
                     <div class="mb-3">
-                        <label for="productName">CarName</label>
+                        <label for="carName">CarName</label>
                         <div class="form-group">
                             <input type="text" id="carName" formControlName="carName" class="form-control"
                                 placeholder="aracın adını giriniz..." />
                         </div>
                     </div>
                     <div class="mb-3">
-                        <label for="productName">BrandId</label>
+                        <label for="brandId">BrandId</label>
                         <div class="form-group">
                             <input type="number" id="brandId" formControlName="brandId" class="form-control"
                                 placeholder="aracın marka değerini giriniz" />
                         </div>
                     </div>
                     <div class="mb-3">
-                        <label for="productName">ColorId</label>
+                        <label for="colorId">ColorId</label>
                         <div class="form-group">
                             <input type="number" id="colorId" formControlName="colorId" class="form-control"
                                 placeholder="aracın renk değerini giriniz" />
                         </div>
                     </div>
                     <div class="mb-3">
-                        <label for="productName">ModelYear</label>
+                        <label for="modelYear">ModelYear</label>
                         <div class="form-group">
                             <input type="number" id="modelYear" formControlName="modelYear" class="form-control"
                                 placeholder="aracın model yılını giriniz" />
                         </div>
                     </div>
                     <div class="mb-3">
-                        <label for="productName">DailyPrice</label>
+                        <label for="dailyPrice">DailyPrice</label>
                         <div class="form-group">
                             <input type="number" id="dailyPrice" formControlName="dailyPrice" class="form-control"
                                 placeholder="günlük fiyatını giriniz" />
                         </div>
+                    </div>
+                    <div class="mt-2">
+                        <label for="findeksPoint">FindeksPoint</label>
+                        <input type="number" id="findeksPoint" name="findeksPoint" class="form-control"
+                            placeholder="FindeksPoint giriniz..." formControlName="findeksPoint">
                     </div>
                     <div class="mt-2">
                         <label for="description">Açıklama</label>
