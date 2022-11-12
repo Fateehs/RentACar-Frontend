@@ -32,3 +32,6 @@ export const RegisterPath = 'register';
 
 // PROFILE PATHS
 export const ProfilePath = 'profile';
+
+// ENTITY MANAGEMENT PATHS
+export const EntityManagementPath = 'entity-management-page';
