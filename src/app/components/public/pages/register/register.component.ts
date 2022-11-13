@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { RegisterModel } from 'src/app/models/entitymodels/auth/registerModel';
 import { AuthService } from 'src/app/services/auth/auth.service';
 
 @Component({
@@ -32,20 +33,11 @@ export class RegisterComponent implements OnInit {
     });
   }
 
-  register() {
-    if (this.registerForm.valid) {
-      let registerModel = Object.assign({}, this.registerForm.value);
-
-      this.authService.register(registerModel).subscribe(
-        (response) => {
-          this.toastrService.success(response.message);
-          this.router.navigate(['login']);
-        },
-        (responseError) => {
-          this.toastrService.error(responseError.error.message);
-          this.router.navigate(['register']);
-        }
-      );
+  register(){
+    if(this.registerForm.valid){
+      let registerDTO:RegisterModel=Object.assign({},this.registerForm.value)
+      this.authService.register(registerDTO)
     }
+    else this.toastrService.error("Form Has Absent")
   }
 }

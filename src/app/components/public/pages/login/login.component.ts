@@ -7,6 +7,7 @@ import {
 } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { LoginModel } from 'src/app/models/entitymodels/auth/loginModel';
 import { AuthService } from 'src/app/services/auth/auth.service';
 import { LocalStorageService } from 'src/app/services/local-storage/local-storage.service';
 
@@ -36,20 +37,11 @@ export class LoginComponent implements OnInit {
     });
   }
 
-  login() {
-    if (this.loginForm.valid) {
-      let loginModel = Object.assign({}, this.loginForm.value);
-
-      this.authService.login(loginModel).subscribe(
-        (response) => {
-          this.toastrService.info(response.message);
-          this.localStorageService.save('token', response.data.token);
-          this.router.navigate(['']);
-        },
-        (responseError) => {
-          this.toastrService.error(responseError.error.message);
-        }
-      );
+  login(){
+    if(this.loginForm.valid){
+      let login:LoginModel=Object.assign({},this.loginForm.value)
+      this.authService.login(login)
     }
+    else this.toastrService.error("Form Has Absent")
   }
 }
