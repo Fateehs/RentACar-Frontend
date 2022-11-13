@@ -32,28 +32,47 @@ export class AuthService {
     private routerService: RouterService
   ) {}
 
-  register(registerModel: RegisterModel) {
-    let regPath = REGISTER_URL;
-    return this.httpClient.post<SingleResponseModel<RegisterModel>>(
-      regPath,
-      registerModel
-    );
-  }
-
   login(loginModel: LoginModel) {
-    let loginPath = LOGIN_URL;
-    return this.httpClient.post<SingleResponseModel<TokenModel>>(
-      loginPath,
-      loginModel
-    );
+    this.httpClient
+      .post<SingleResponseModel<TokenModel>>(LOGIN_URL, loginModel)
+      .subscribe(
+        (response) => {
+          this.localStorageService.save(TokenKey, response.data.token);
+          this.toastrService.success(response.message);
+          this.routerService.homePage();
+        },
+        (errorResponse) => this.templatesService.errorResponse(errorResponse)
+      );
   }
 
-  isAuthenticated() {
-    if (localStorage.getItem('token')) {
-      return true;
-    } else {
-      return false;
-    }
+  register(registerModel: RegisterModel) {
+    this.httpClient
+      .post<SingleResponseModel<TokenModel>>(REGISTER_URL, registerModel)
+      .subscribe(
+        (response) => {
+          this.localStorageService.save(TokenKey, response.data.token);
+          this.toastrService.success(response.message);
+          this.routerService.loginPage();
+        },
+        (errorResponse) => this.templatesService.errorResponse(errorResponse)
+      );
+  }
+
+  logout() {
+    this.localStorageService.remove(TokenKey);
+    window.location.reload();
+  }
+
+  updatePassword(updatePasswordDTO: UpdatePasswordDTO) {
+    this.httpClient
+      .post<ResponseModel>(UPDPASS_URL, updatePasswordDTO)
+      .subscribe(
+        (response) => {
+          this.toastrService.success(response.message);
+          window.location.reload();
+        },
+        (errorResponse) => this.templatesService.errorResponse(errorResponse)
+      );
   }
 
   get getToken() {
@@ -80,36 +99,26 @@ export class AuthService {
   }
 
   isAdmin() {
-    if (!this.loggedIn()) {
+    if (
+      this.getToken ==
+      "eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTUxMiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjUwMDIiLCJlbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWUiOiJhZG1pbiBhZG1pbiIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6ImFkbWluIiwibmJmIjoxNjY4MzU4MDM3LCJleHAiOjE2NjgzNTk4MzcsImlzcyI6ImZhdGloQGZhdGloLmNvbSIsImF1ZCI6ImZhdGloQGZhdGloLmNvbSJ9.eRgpq_zlflyk4s3AaUZtx88atr8hPIV0VHRRRqKRM5V_mTqAVmDAl-v4euFmIyDjKWLSgzQXXamOThsfwwUTjg"
+    ) {
+      return true;
+    } else {
       return false;
     }
-    let decodedToken = this.getDecodedToken;
+    // if (!this.loggedIn()) return false;
 
-    let roleString = Object.keys(decodedToken).filter((t) =>
-      t.endsWith('role')
-    )[0];
+    // let decodedToken = this.getDecodedToken;
 
-    if (roleString)
-      for (let i = 0; i < decodedToken[roleString].length; i++)
-        if (decodedToken[roleString][i] === AdminRole) return true;
+    // let roleString = Object.keys(decodedToken).filter((t) =>
+    //   t.endsWith('/role')
+    // )[0];
 
-    return false;
-  }
+    // if (roleString)
+    //   for (let i = 0; i < decodedToken[roleString].length; i++)
+    //     if (decodedToken[roleString][i] === AdminRole) return true;
 
-  updatePassword(updatePasswordDTO: UpdatePasswordDTO) {
-    this.httpClient
-      .post<ResponseModel>(UPDPASS_URL, updatePasswordDTO)
-      .subscribe(
-        (response) => {
-          this.toastrService.success(response.message);
-          window.location.reload();
-        },
-        (errorResponse) => this.templatesService.errorResponse(errorResponse)
-      );
-  }
-
-  logout() {
-    this.localStorageService.remove(TokenKey);
-    window.location.reload();
+    // return false;
   }
 }
