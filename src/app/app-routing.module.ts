@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { EntityManagementRouterButtonsPageComponent } from './components/admin/layouts/router-buttons/entity-management-router-buttons-page/entity-management-router-buttons-page.component';
 import { AddBrandComponent } from './components/admin/pages/management/adds/add-brand/add-brand.component';
 import { AddCarComponent } from './components/admin/pages/management/adds/add-car/add-car.component';
 import { AddColorComponent } from './components/admin/pages/management/adds/add-color/add-color.component';
@@ -61,7 +60,6 @@ const routes: Routes = [
   { path: PayPath, component: PayComponent },
   { path: RegisterPath, component: RegisterComponent },
   { path: LoginPath, component: LoginComponent },
-  { path: EntityManagementPath ,component: EntityManagementRouterButtonsPageComponent,canActivate: [LoginGuard],},
   { path: ProfilePath, component: ProfileComponent, canActivate: [LoginGuard] },
 ];
 
