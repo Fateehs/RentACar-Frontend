@@ -1,15 +1,24 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import {
+  AddBrandPath,
+  AddCarImageByCarIdPath,
+  AddCarPath,
+  AddColorPath,
+  BrandListPath,
   CarDetailByIdPath,
+  CarDetailListPath,
   CarDetailsByBrandIdPath,
   CarDetailsByColorIdPath,
   CarDetailsPath,
+  ColorListPath,
+  CustomerListPath,
   HomePagePath,
   LoginPath,
   PayPath,
   ProfilePath,
   RegisterPath,
+  RentalDetailListPath,
   RentByCarIdPath,
 } from 'src/app/models/constants/paths';
 
@@ -63,5 +72,41 @@ export class RouterService {
 
   profilePage() {
     this.router.navigate([ProfilePath]);
+  }
+
+  addBrandPage() {
+    this.router.navigate([AddBrandPath]);
+  }
+
+  addCarImagePageByCarId(carId: number) {
+    this.router.navigate([AddCarImageByCarIdPath + carId]);
+  }
+
+  addCarPage() {
+    this.router.navigate([AddCarPath]);
+  }
+
+  addColorPage() {
+    this.router.navigate([AddColorPath]);
+  }
+
+  brandListPage() {
+    this.router.navigate([BrandListPath]);
+  }
+
+  carDetailListPage() {
+    this.router.navigate([CarDetailListPath]);
+  }
+
+  colorListPage() {
+    this.router.navigate([ColorListPath]);
+  }
+
+  customerListPage() {
+    this.router.navigate([CustomerListPath]);
+  }
+
+  rentalDetailListPage() {
+    this.router.navigate([RentalDetailListPath]);
   }
 }
