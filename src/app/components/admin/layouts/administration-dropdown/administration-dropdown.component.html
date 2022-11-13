@@ -1,0 +1,18 @@
+<div class="dropdown" *ngIf="isAdmin()" >
+    <button [class]="classFromParent" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+      {{innerHTML}}
+    </button>
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <li><app-route-to-add-car-page-button classFromParent="dropdown-item"></app-route-to-add-car-page-button></li>
+        <li><app-route-to-add-brand-page-button classFromParent="dropdown-item"></app-route-to-add-brand-page-button></li>
+        <li><app-route-to-add-color-page-button classFromParent="dropdown-item"></app-route-to-add-color-page-button></li>
+        <li>
+          <hr class="dropdown-divider">
+        </li>
+        <li><app-route-to-car-detail-list-page-button classFromParent="dropdown-item"></app-route-to-car-detail-list-page-button></li>
+        <li><app-route-to-brand-list-page-button classFromParent="dropdown-item"></app-route-to-brand-list-page-button></li>
+        <li><app-route-to-color-list-page-button classFromParent="dropdown-item"></app-route-to-color-list-page-button></li>
+        <li><app-route-to-customer-list-page-button classFromParent="dropdown-item"></app-route-to-customer-list-page-button></li>
+        <li><app-route-to-rental-detail-list-page-button classFromParent="dropdown-item"></app-route-to-rental-detail-list-page-button></li>
+    </ul>
+  </div>
