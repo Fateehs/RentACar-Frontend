@@ -11,6 +11,6 @@ contributions.
 
 ## Associated Project
 
-For frontend project (**RentACar-Backend**)
+For backend project (**RentACar-Backend**)
 
 [RentACar-Backend](https://github.com/Fateehs/RentACar-Backend)
