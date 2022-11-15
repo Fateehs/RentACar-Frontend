@@ -1,27 +1,44 @@
-# RentACarFrontend
+#RentACar 
+For this project, I decided to use the name that suits its purpose.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.4.
+#Project Description
+This is the backend of my project for renting a car. You can rent (think of it as simulated) a car through this web application.
 
-## Development server
+## Technologies That Used
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+* Fluent Validation
+* Autofac
+* JWT (JSON Web Token)
+* Entity Framework
+* Caching, Validation, Transaction, Performance Aspects
 
-## Code scaffolding
+## Tech Stack
+| Technology / Library | Version |
+| ------------- | ------------- |
+| .NET | 5.0 |
+| Autofac | 6.2.0 |
+| Autofac.Extensions.DependencyInjection | 7.1.0 |
+| Autofac.Extras.DynamicProxy | 6.0.0 |
+| FluentValidation | 10.3.0 |
+| Microsoft.AspNetCore.Authentication.JwtBearer | 5.0.9 |
+| Microsoft.AspNetCore.Http | 2.2.2 |
+| Microsoft.AspNetCore.Http.Abstractions | 2.2.0 |
+| Microsoft.AspNetCore.Features | 5.0.9 |
+| Microsoft.EntityFrameworkCore.Design | 5.0.8 |
+| Microsoft.EntityFrameworkCore.SqlServer | 5.0.8 |
+| Microsoft.EntityFrameworkCore.Configuration | 5.0.0 |
+| Microsoft.EntityFrameworkCore.Configuration.Binder | 5.0.0 |
+| Microsoft.IdentityModel.Tokens | 6.12.2 |
+| Mime-Detective | 22.7.16 |
+| Newtonsoft.Json | 10.0.1 |
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+# Contributions
 
-## Build
+Thanks to [Engin Demiroğ](http://https://github.com/engindemirog) for his 
+contributions.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Associated Project
 
-## Running unit tests
+For frontend project (**RentACar-Frontend**)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+[RentACar-Frontend](https://github.com/Fateehs/RentACar-Frontend)
