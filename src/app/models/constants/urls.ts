@@ -38,6 +38,7 @@ export const GETCOLORS_URL = COLOR_URL + 'getall';
 export const CARIMG_URL = API_URL + 'carImages/';
 export const GETALLIMGBYCARID_URL = CARIMG_URL + 'getallbycarid?carId=';
 export const DELCARIMAGE_URL = CARIMG_URL + 'delete?id=';
+export const ADDCARIMAGE_URL = CARIMG_URL  + 'add?carId='
 
 // RENTAL MANAGEMENT
 export const RENTAL_URL = API_URL + 'rentals/';
