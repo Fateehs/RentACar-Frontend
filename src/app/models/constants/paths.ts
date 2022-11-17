@@ -31,7 +31,7 @@ export const RentByCarIdPath = 'rent/';
 export const RentalDetailListPath = 'rental-detail-list';
 
 // CUSTOMER PATHS
-export const CustomerListPath = 'color-list';
+export const CustomerListPath = 'customer-list';
 
 // PAYMENT PATHS
 export const PayPath = 'pay';
