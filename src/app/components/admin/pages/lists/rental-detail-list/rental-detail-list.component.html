@@ -1,0 +1,23 @@
+<div>
+    <h4>Detaylı Kiralama Geçmişi Listesi</h4>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Marka</th>
+                <th>İsim Soyisim</th>
+                <th>Kiralama Tarihi</th>
+                <th>Teslim Tarihi</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let rentalDetailDTO of rentalDetailDTOs">
+                <td>{{rentalDetailDTO.rentalId}}</td>
+                <td>{{rentalDetailDTO.brandName}}</td>
+                <td>{{rentalDetailDTO.fullName}}</td>
+                <td>{{rentalDetailDTO.rentDate|date}}</td>
+                <td>{{rentalDetailDTO.returnDate|date}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,44 @@
+<div>
+    <h4>Detaylı Araba Listesi</h4>
+    <input type="text" id="filterText" [(ngModel)]="filterText" placeholder="Arama metni giriniz" class="form-control">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Model</th>
+                <th>Marka</th>
+                <th>Renk</th>
+                <th>Model Yılı</th>
+                <th>Günlük Fiyat</th>
+                <th>Findeks Puanı</th>
+                <th>Açıklama</th>
+                <th>Seçenekler</th>
+                <th>Ek Seçenekler</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let carDetailDTO of carDetailDTOs|carDetailsFilter:filterText">
+                <td>{{carDetailDTO.carId}}</td>
+                <td>{{carDetailDTO.carName}}</td>
+                <td>{{carDetailDTO.brandName}}</td>
+                <td>{{carDetailDTO.colorName}}</td>
+                <td>{{carDetailDTO.modelYear}}</td>
+                <td>{{carDetailDTO.dailyPrice|currency}}</td>
+                <td>{{carDetailDTO.findeksPoint}}</td>
+                <td>{{carDetailDTO.description}}</td>
+                <td>
+                    <div class="d-flex justify-content-between" *ngIf="cars">
+                        <app-update-car classFromParent="btn btn-success" [currentCarFromParent]="getByIdFromInMemory(carDetailDTO.carId)"></app-update-car>
+                        <app-delete-car classFromParent="btn btn-danger" [currentCarFromParent]="getByIdFromInMemory(carDetailDTO.carId)"></app-delete-car>
+                    </div>  
+                </td>
+                <td>
+                    <div class="d-flex justify-content-between">
+                        <app-route-to-add-car-image-page-button classFromParent="btn btn-primary" [currentCarIdFromParent]="carDetailDTO.carId" [innerHTML]="'Resim/Ekle' + '(' + carDetailDTO.imagePath.length + ')'"></app-route-to-add-car-image-page-button>
+                        <app-delete-car-image classFromParent="btn btn-danger" [currentCarImagesFromParent]="carDetailDTO.imagePath" innerHTML="Resim/Sil"></app-delete-car-image>
+                    </div>  
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

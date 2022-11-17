@@ -1,7 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
+import { Brand } from 'src/app/models/entitymodels/brand';
+import { Color } from 'src/app/models/entitymodels/color';
+import { BrandService } from 'src/app/services/brand/brand.service';
 import { CarService } from 'src/app/services/car/car.service';
+import { ColorService } from 'src/app/services/color/color.service';
 
 @Component({
   selector: 'app-add-car',
@@ -10,10 +14,15 @@ import { CarService } from 'src/app/services/car/car.service';
 })
 export class AddCarComponent implements OnInit {
   carAddForm: FormGroup;
+
+  brands: Brand[];
+  colors: Color[];
   constructor(
     private formBuilder: FormBuilder,
     private carService: CarService,
-    private toastrService: ToastrService
+    private toastrService: ToastrService,
+    private brandService: BrandService,
+    private colorService: ColorService
   ) {}
 
   ngOnInit(): void {
@@ -28,7 +37,7 @@ export class AddCarComponent implements OnInit {
       modelYear: ['', Validators.required],
       dailyPrice: ['', Validators.required],
       description: ['', Validators.required],
-      findeksPoint: ['', Validators.required]
+      findeksPoint: ['', Validators.required],
     });
   }
 
@@ -39,5 +48,17 @@ export class AddCarComponent implements OnInit {
     } else {
       this.toastrService.error('Form Has Absent Values', 'Be Carefull');
     }
+  }
+
+  getBrands() {
+    this.brandService.getAll().subscribe((response) => {
+      this.brands = response.data;
+    });
+  }
+
+  getColors() {
+    this.colorService.getAll().subscribe((response) => {
+      this.colors = response.data;
+    });
   }
 }

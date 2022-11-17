@@ -1,0 +1,72 @@
+<!-- Button trigger modal -->
+<button type="button" [class]="classFromParent" data-bs-toggle="modal" [attr.data-bs-target]="'#updateCarModal'+currentCarFromParent.carId" *ngIf="isAdmin()">
+    {{innerHTML}}
+</button>
+
+<!-- Modal -->
+<div class="modal fade" [id]="'updateCarModal'+currentCarFromParent.carId" tabindex="-1" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Araba Güncelle</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+
+                <form [formGroup]="updateFormGroup">
+                    <div>
+                        <label for="brandId">Marka</label>
+                        <select id="brandId" name="brandId" class="form-select" formControlName="brandId">
+                            <option *ngFor="let brand of brands" [value]="brand.brandId">{{brand.brandName}}</option>
+                        </select>
+                    </div>
+
+                    <div class="mt-2">
+                        <label for="colorId">Renk</label>
+                        <select id="colorId" name="colorId" class="form-select" formControlName="colorId">
+                            <option *ngFor="let color of colors" [value]="color.colorId">{{color.colorName}}</option>
+                        </select>
+                    </div>
+
+                    <div class="mt-2">
+                        <label for="name">Model</label>
+                        <input type="text" id="name" name="name" class="form-control" placeholder="Model"
+                            formControlName="name">
+                    </div>
+
+                    <div class="mt-2">
+                        <label for="modelYear">Model Yılı</label>
+                        <input type="number" id="modelYear" name="modelYear" class="form-control" placeholder="Model Yılı"
+                            formControlName="modelYear">
+                    </div>
+
+                    <div class="mt-2">
+                        <label for="dailyPrice">Günlük Fiyat</label>
+                        <input type="number" id="dailyPrice" name="dailyPrice" class="form-control"
+                            placeholder="Günlük Fiyat" formControlName="dailyPrice">
+                    </div>
+
+                    <div class="mt-2">
+                        <label for="findeksPoint">Findeks Puanı</label>
+                        <input type="number" id="findeksPoint" name="findeksPoint" class="form-control"
+                            placeholder="Findeks Puanı" formControlName="findeksPoint">
+                    </div>
+
+                    <div class="mt-2">
+                        <label for="description">Açıklama</label>
+                        <input type="text" id="description" name="description" class="form-control"
+                            placeholder="Açıklama" formControlName="description">
+                    </div>
+
+                    
+                </form>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Kapat</button>
+                <button class="btn btn-success mt-2" (click)="update()">Güncelle</button>
+            </div>
+        </div>
+    </div>
+</div>

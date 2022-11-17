@@ -1,23 +1,13 @@
-<div class="content">
-    <div class="col-md-12">
-        <div class="card">
-            <div class="card-header">
-                <h5 class="title">Renk Ekle</h5>
-            </div>
-            <div class="card-body">
-                <form [formGroup]="colorAddForm">
-                    <div class="mb-3">
-                        <label for="productName">ColorName</label>
-                        <div class="form-group">
-                            <input type="text" id="colorName" formControlName="colorName" class="form-control"
-                                placeholder="colorName yazınız" />
-                        </div>
-                    </div>
-                </form>
-            </div>
-            <div class="card-footer">
-                <button class="btn btn-fill btn-success" (click)="add()">Ekle</button>
-            </div>
+<div>
+    <h4>Renk Ekle</h4>
+    <form [formGroup]="colorAddForm">
+        <div>
+            <label for="name">Renk İsmi</label>
+            <input type="text" id="name" name="name" placeholder="Renk İsmi" class="form-control" formControlName="name">
         </div>
-    </div>
+    
+        <div class="mt-2">
+            <button class="btn btn-success" (click)="add()">Ekle</button>
+        </div>
+    </form>
 </div>

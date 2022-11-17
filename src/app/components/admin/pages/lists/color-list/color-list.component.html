@@ -1,0 +1,25 @@
+<div>
+    <h4>Renk Listesi</h4>
+    <input type="text" id="filterText" [(ngModel)]="filterText" placeholder="Arama metni giriniz" class="form-control">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Marka</th>
+                <th>Seçenekler</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let color of colors|colorsFilter:filterText">
+                <td>{{color.colorId}}</td>
+                <td>{{color.colorName}}</td>
+                <td>
+                    <div>
+                        <app-update-color classFromParent="btn btn-success" [currentColorFromParent]="color"></app-update-color>
+                        <app-delete-color classFromParent="btn btn-danger" [currentColorFromParent]="color"></app-delete-color>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

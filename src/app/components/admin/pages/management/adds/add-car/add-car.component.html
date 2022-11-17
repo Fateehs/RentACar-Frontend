@@ -1,61 +1,47 @@
-<div class="content">
-    <div class="col-md-12">
-        <div class="card">
-            <div class="card-header">
-                <h5 class="title">Araç Ekle</h5>
-            </div>
-            <div class="card-body">
-                <form [formGroup]="carAddForm">
-                    <div class="mb-3">
-                        <label for="carName">CarName</label>
-                        <div class="form-group">
-                            <input type="text" id="carName" formControlName="carName" class="form-control"
-                                placeholder="aracın adını giriniz..." />
-                        </div>
-                    </div>
-                    <div class="mb-3">
-                        <label for="brandId">BrandId</label>
-                        <div class="form-group">
-                            <input type="number" id="brandId" formControlName="brandId" class="form-control"
-                                placeholder="aracın marka değerini giriniz" />
-                        </div>
-                    </div>
-                    <div class="mb-3">
-                        <label for="colorId">ColorId</label>
-                        <div class="form-group">
-                            <input type="number" id="colorId" formControlName="colorId" class="form-control"
-                                placeholder="aracın renk değerini giriniz" />
-                        </div>
-                    </div>
-                    <div class="mb-3">
-                        <label for="modelYear">ModelYear</label>
-                        <div class="form-group">
-                            <input type="number" id="modelYear" formControlName="modelYear" class="form-control"
-                                placeholder="aracın model yılını giriniz" />
-                        </div>
-                    </div>
-                    <div class="mb-3">
-                        <label for="dailyPrice">DailyPrice</label>
-                        <div class="form-group">
-                            <input type="number" id="dailyPrice" formControlName="dailyPrice" class="form-control"
-                                placeholder="günlük fiyatını giriniz" />
-                        </div>
-                    </div>
-                    <div class="mt-2">
-                        <label for="findeksPoint">FindeksPoint</label>
-                        <input type="number" id="findeksPoint" name="findeksPoint" class="form-control"
-                            placeholder="FindeksPoint giriniz..." formControlName="findeksPoint">
-                    </div>
-                    <div class="mt-2">
-                        <label for="description">Açıklama</label>
-                        <textarea type="text" id="description" name="description" class="form-control"
-                            placeholder="Açıklama" formControlName="description"></textarea>
-                    </div>
-                </form>
-            </div>
-            <div class="card-footer">
-                <button class="btn btn-fill btn-success" (click)="add()">Ekle</button>
-            </div>
+<div>
+    <h4>Araba Ekle</h4>
+    <form [formGroup]="carAddForm">
+        <div>
+            <label for="brandId">Marka</label>
+            <select id="brandId" name="brandId" class="form-select" formControlName="brandId">
+                <option *ngFor="let brand of brands" [value]="brand.brandId">{{brand.brandName}}</option>
+            </select>
         </div>
-    </div>
+    
+        <div class="mt-2">
+            <label for="colorId">Renk</label>
+            <select id="colorId" name="colorId" class="form-select" formControlName="colorId">
+                <option *ngFor="let color of colors" [value]="color.colorId">{{color.colorName}}</option>
+            </select>
+        </div>
+    
+        <div class="mt-2">
+            <label for="name">Model</label>
+            <input type="text" id="name" name="name" class="form-control" placeholder="Model" formControlName="name">
+        </div>
+    
+        <div class="mt-2">
+            <label for="modelYear">Model Yılı</label>
+            <input type="number" id="modelYear" name="modelYear" class="form-control" placeholder="Model Yılı" formControlName="modelYear">
+        </div>
+    
+        <div class="mt-2">
+            <label for="dailyPrice">Günlük Fiyat</label>
+            <input type="number" id="dailyPrice" name="dailyPrice" class="form-control" placeholder="Günlük Fiyat" formControlName="dailyPrice">
+        </div>
+    
+        <div class="mt-2">
+            <label for="findeksPoint">Findeks Puanı</label>
+            <input type="number" id="findeksPoint" name="findeksPoint" class="form-control" placeholder="Findeks Puanı" formControlName="findeksPoint">
+        </div>
+    
+        <div class="mt-2">
+            <label for="description">Açıklama</label>
+            <textarea type="text" id="description" name="description" class="form-control" placeholder="Açıklama" formControlName="description"></textarea>
+        </div>
+        
+        <div>
+            <button class="btn btn-success mt-2" (click)="add()">Add</button>
+        </div>
+    </form>
 </div>

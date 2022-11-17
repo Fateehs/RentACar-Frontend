@@ -1,0 +1,31 @@
+<!-- Button trigger modal -->
+<button type="button" [class]="classFromParent" data-bs-toggle="modal" [attr.data-bs-target]="'#updateColorModal'+currentColorFromParent.colorId" *ngIf="isAdmin()">
+    {{innerHTML}}
+</button>
+
+<!-- Modal -->
+<div class="modal fade" [id]="'updateColorModal'+currentColorFromParent.colorId" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Renk Güncelle</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+
+                <form class="form-group" [formGroup]="updateFormGroup">
+                    <div>
+                        <label for="name">Renk İsmi</label>
+                        <input type="text" id="name" name="name" placeholder="Renk İsmi" class="form-control"
+                            formControlName="name">
+                    </div>
+                </form>
+                
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button class="btn btn-success" (click)="update()">Update</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,25 @@
+<div>
+    <h4>Marka Listesi</h4>
+    <input type="text" id="filterText" [(ngModel)]="filterText" placeholder="Arama metni giriniz" class="form-control">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Marka</th>
+                <th>Seçenekler</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let brand of brands|brandsFilter:filterText">
+                <td>{{brand.brandId}}</td>
+                <td>{{brand.brandName}}</td>
+                <td>
+                    <div>
+                        <app-update-brand classFromParent="btn btn-success" [currentBrandFromParent]="brand"></app-update-brand>
+                        <app-delete-brand classFromParent="btn btn-danger" [currentBrandFromParent]="brand"></app-delete-brand>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

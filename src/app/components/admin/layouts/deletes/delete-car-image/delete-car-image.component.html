@@ -1,0 +1,25 @@
+<!-- Button trigger modal -->
+<button [class]="classFromParent" data-bs-toggle="modal" [attr.data-bs-target]="'#deleteCarImageModal' + getCurrentCarId" *ngIf="isAdmin()">
+    {{innerHTML}}
+</button>
+
+<!-- Modal -->
+<div class="modal fade" [id]="'deleteCarImageModal' + getCurrentCarId" tabindex="-1"
+    aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Resim Sil</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div *ngFor="let carImage of currentCarImagesFromParent" class="border mt-1">
+                    <img type="button" [src]="getFullImagePath(carImage.imagePath)" class="w-100" (click)="delete(carImage.id)"/>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="reloadPage()">Kapat ve Yenile</button>
+            </div>
+        </div>
+    </div>
+</div>
