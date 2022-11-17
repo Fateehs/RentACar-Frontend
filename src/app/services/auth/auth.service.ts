@@ -99,26 +99,27 @@ export class AuthService {
   }
 
   isAdmin() {
-    if (
-      this.getToken ==
-      "eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTUxMiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjUwMDIiLCJlbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWUiOiJhZG1pbiBhZG1pbiIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6ImFkbWluIiwibmJmIjoxNjY4MzU4MDM3LCJleHAiOjE2NjgzNTk4MzcsImlzcyI6ImZhdGloQGZhdGloLmNvbSIsImF1ZCI6ImZhdGloQGZhdGloLmNvbSJ9.eRgpq_zlflyk4s3AaUZtx88atr8hPIV0VHRRRqKRM5V_mTqAVmDAl-v4euFmIyDjKWLSgzQXXamOThsfwwUTjg"
-    ) {
-      return true;
-    } else {
-      return false;
-    }
-    // if (!this.loggedIn()) return false;
+    
+    if (!this.loggedIn()) return false;
 
-    // let decodedToken = this.getDecodedToken;
+    let decodedToken = this.getDecodedToken;
 
-    // let roleString = Object.keys(decodedToken).filter((t) =>
-    //   t.endsWith('/role')
-    // )[0];
+    let roleString = Object.keys(decodedToken).filter((t) =>
+      t.endsWith('/role')
+    )[0];
 
-    // if (roleString)
-    //   for (let i = 0; i < decodedToken[roleString].length; i++)
-    //     if (decodedToken[roleString][i] === AdminRole) return true;
+    if (roleString)
+      for (let i = 0; i < decodedToken[roleString].length; i++)
+        if (decodedToken[roleString][i] === AdminRole) return true;
 
-    // return false;
+    return false;
   }
 }
+// if (
+//   this.getToken ==
+//   "eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTUxMiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjUwMDIiLCJlbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWUiOiJhZG1pbiBhZG1pbiIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6ImFkbWluIiwibmJmIjoxNjY4MzU4MDM3LCJleHAiOjE2NjgzNTk4MzcsImlzcyI6ImZhdGloQGZhdGloLmNvbSIsImF1ZCI6ImZhdGloQGZhdGloLmNvbSJ9.eRgpq_zlflyk4s3AaUZtx88atr8hPIV0VHRRRqKRM5V_mTqAVmDAl-v4euFmIyDjKWLSgzQXXamOThsfwwUTjg"
+// ) {
+//   return true;
+// } else {
+//   return false;
+// }
