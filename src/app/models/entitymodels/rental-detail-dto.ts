@@ -1,5 +1,5 @@
 export interface RentalDetailDTO {
-  id: number;
+  rentalId: number;
   brandName: string;
   fullName: string;
   rentDate: Date;
