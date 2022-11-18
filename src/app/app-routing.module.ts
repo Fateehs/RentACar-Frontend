@@ -11,6 +11,7 @@ import { ColorListComponent } from './components/admin/pages/lists/color-list/co
 import { CustomerListComponent } from './components/admin/pages/lists/customer-list/customer-list.component';
 import { RentalDetailListComponent } from './components/admin/pages/lists/rental-detail-list/rental-detail-list.component';
 import { AddBrandComponent } from './components/admin/pages/management/adds/add-brand/add-brand.component';
+import { AddCarImageComponent } from './components/admin/pages/management/adds/add-car-image/add-car-image.component';
 import { AddCarComponent } from './components/admin/pages/management/adds/add-car/add-car.component';
 import { AddColorComponent } from './components/admin/pages/management/adds/add-color/add-color.component';
 import { CarDetailComponent } from './components/public/pages/cardetail/cardetail.component';
@@ -24,6 +25,7 @@ import { LoginGuard } from './guards/login.guard';
 import { CarId } from './models/constants/entity-ids';
 import {
   AddBrandPath,
+  AddCarImageByCarIdPath,
   AddCarPath,
   AddColorPath,
   BrandListPath,
@@ -68,6 +70,7 @@ const routes: Routes = [
   { path: AddCarPath, component: AddCarComponent },
   { path: AddBrandPath, component: AddBrandComponent },
   { path: AddColorPath, component: AddColorComponent },
+  { path: AddCarImageByCarIdPath + ":" + CarId, component: AddCarImageComponent },
 ];
 
 @NgModule({
