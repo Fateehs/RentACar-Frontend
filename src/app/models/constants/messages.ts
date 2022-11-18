@@ -1,0 +1,1 @@
+export const AbsentForm = 'Form Has Absent Values Be Carefull!'

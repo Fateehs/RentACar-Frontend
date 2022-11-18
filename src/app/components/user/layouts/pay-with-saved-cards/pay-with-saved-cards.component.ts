@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { RentalKey } from 'src/app/models/constants/local-storage-keys';
-import { Payment } from 'src/app/models/entitymodels/payment';
-import { Rental } from 'src/app/models/entitymodels/rental';
-import { LocalStorageService } from 'src/app/services/local-storage/local-storage.service';
-import { PaymentService } from 'src/app/services/payment/payment.service';
-import { RentalService } from 'src/app/services/rental/rental.service';
+import { Payment } from 'src/app/models/entity-models/entities/payment';
+import { Rental } from 'src/app/models/entity-models/entities/rental';
+import { LocalStorageService } from 'src/app/services/local-storage.service';
+import { PaymentService } from 'src/app/services/payment.service';
+import { RentalService } from 'src/app/services/rental.service';
+
 
 @Component({
   selector: 'app-pay-with-saved-cards',

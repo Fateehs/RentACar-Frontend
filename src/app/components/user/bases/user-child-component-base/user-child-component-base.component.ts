@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonChildComponentBaseComponent } from 'src/app/components/public/bases/common-child-component-base/common-child-component-base.component';
-import { AuthService } from 'src/app/services/auth/auth.service';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-user-child-component-base',

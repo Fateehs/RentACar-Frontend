@@ -4,13 +4,13 @@ import { ActivatedRoute } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { CarId } from 'src/app/models/constants/entity-ids';
 import { RentalKey } from 'src/app/models/constants/local-storage-keys';
-import { Customer } from 'src/app/models/entitymodels/customer';
-import { Rental } from 'src/app/models/entitymodels/rental';
-import { CustomerService } from 'src/app/services/customer/customer.service';
-import { LocalStorageService } from 'src/app/services/local-storage/local-storage.service';
-import { RentalService } from 'src/app/services/rental/rental.service';
-import { RouterService } from 'src/app/services/router/router.service';
-import { TemplatesService } from 'src/app/services/template/templates.service';
+import { Customer } from 'src/app/models/entity-models/entities/customer';
+import { Rental } from 'src/app/models/entity-models/entities/rental';
+import { CustomerService } from 'src/app/services/customer.service';
+import { LocalStorageService } from 'src/app/services/local-storage.service';
+import { RentalService } from 'src/app/services/rental.service';
+import { RouterService } from 'src/app/services/router.service';
+import { TemplatesService } from 'src/app/services/templates.service';
 
 @Component({
   selector: 'app-rent',

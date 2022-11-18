@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Payment } from 'src/app/models/entitymodels/payment';
-import { AuthService } from 'src/app/services/auth/auth.service';
-import { PaymentService } from 'src/app/services/payment/payment.service';
+import { Payment } from 'src/app/models/entity-models/entities/payment';
+import { AuthService } from 'src/app/services/auth.service';
+import { PaymentService } from 'src/app/services/payment.service';
 import { UserChildComponentBaseComponent } from '../../../bases/user-child-component-base/user-child-component-base.component';
 
 @Component({

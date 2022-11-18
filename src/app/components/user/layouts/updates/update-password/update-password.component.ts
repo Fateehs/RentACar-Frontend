@@ -1,9 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
-import { UpdatePasswordDTO } from 'src/app/models/entitymodels/update-password-dto';
-import { UserDTO } from 'src/app/models/entitymodels/user-dto';
-import { AuthService } from 'src/app/services/auth/auth.service';
+import { UpdatePasswordDTO } from 'src/app/models/entity-models/dto/update-password-dto';
+import { UserDTO } from 'src/app/models/entity-models/dto/user-dto';
+import { AuthService } from 'src/app/services/auth.service';
 import { UserChildComponentBaseComponent } from '../../../bases/user-child-component-base/user-child-component-base.component';
 
 @Component({

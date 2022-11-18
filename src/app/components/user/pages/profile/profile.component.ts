@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { UserDTO } from 'src/app/models/entitymodels/user-dto';
-import { UserService } from 'src/app/services/user/user.service';
+import { UserDTO } from 'src/app/models/entity-models/dto/user-dto';
+import { UserService } from 'src/app/services/user.service';
+
 
 @Component({
   selector: 'app-profile',

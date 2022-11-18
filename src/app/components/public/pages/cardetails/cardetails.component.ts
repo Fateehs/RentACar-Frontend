@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { CarDetailDTO } from 'src/app/models/entitymodels/car/car-detail-dto';
-import { CarService } from 'src/app/services/car/car.service';
+import { CarDetailDTO } from 'src/app/models/entity-models/dto/car-detail-dto';
+import { CarService } from 'src/app/services/car.service';
 
 @Component({
   selector: 'app-cardetails',

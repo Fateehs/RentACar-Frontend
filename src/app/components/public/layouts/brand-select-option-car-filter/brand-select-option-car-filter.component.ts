@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { RouterService } from 'src/app/services/router/router.service';
-import { Brand } from 'src/app/models/entitymodels/brand';
-import { BrandService } from 'src/app/services/brand/brand.service';
+import { Brand } from 'src/app/models/entity-models/entities/brand';
+import { BrandService } from 'src/app/services/brand.service';
 import { ActivatedRoute } from '@angular/router';
 import { BrandId } from 'src/app/models/constants/entity-ids';
+import { RouterService } from 'src/app/services/router.service';
 
 @Component({
   selector: 'app-brand-select-option-car-filter',

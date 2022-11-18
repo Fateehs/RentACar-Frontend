@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from 'src/app/services/auth/auth.service';
+import { AuthService } from 'src/app/services/auth.service';
 import { UserChildComponentBaseComponent } from '../../bases/user-child-component-base/user-child-component-base.component';
 
 @Component({

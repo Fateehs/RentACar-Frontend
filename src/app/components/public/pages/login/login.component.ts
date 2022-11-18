@@ -7,9 +7,9 @@ import {
 } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { LoginModel } from 'src/app/models/entitymodels/auth/loginModel';
-import { AuthService } from 'src/app/services/auth/auth.service';
-import { LocalStorageService } from 'src/app/services/local-storage/local-storage.service';
+import { LoginModel } from 'src/app/models/entity-models/auth/loginModel';
+import { AuthService } from 'src/app/services/auth.service';
+import { LocalStorageService } from 'src/app/services/local-storage.service';
 
 @Component({
   selector: 'app-login',

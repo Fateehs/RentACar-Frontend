@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { BASE_URL, DELCARIMAGE_URL } from 'src/app/models/constants/urls';
-import { CarImage } from 'src/app/models/entitymodels/car/carImage';
-import { CarImageService } from 'src/app/services/car-image/carimage.service';
+import { CarImage } from 'src/app/models/entity-models/car/carImage';
+import { CarImageService } from 'src/app/services/carimage.service';
 
 @Component({
   selector: 'app-car-images-slider-by-car-id',

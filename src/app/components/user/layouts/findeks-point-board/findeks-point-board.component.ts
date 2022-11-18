@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Customer } from 'src/app/models/entitymodels/customer';
-import { AuthService } from 'src/app/services/auth/auth.service';
-import { CustomerService } from 'src/app/services/customer/customer.service';
+import { Customer } from 'src/app/models/entity-models/entities/customer';
+import { AuthService } from 'src/app/services/auth.service';
+import { CustomerService } from 'src/app/services/customer.service';
 
 @Component({
   selector: 'app-findeks-point-board',

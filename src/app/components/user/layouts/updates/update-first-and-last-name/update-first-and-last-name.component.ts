@@ -1,10 +1,11 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
-import { UpdateFirstAndLastNameDTO } from 'src/app/models/entitymodels/update-first-and-last-name-dto';
-import { UserDTO } from 'src/app/models/entitymodels/user-dto';
-import { AuthService } from 'src/app/services/auth/auth.service';
-import { UserService } from 'src/app/services/user/user.service';
+import { UpdateFirstAndLastNameDTO } from 'src/app/models/entity-models/dto/update-first-and-last-name-dto';
+import { UserDTO } from 'src/app/models/entity-models/dto/user-dto';
+import { AuthService } from 'src/app/services/auth.service';
+import { UserService } from 'src/app/services/user.service';
+
 import { UserChildComponentBaseComponent } from '../../../bases/user-child-component-base/user-child-component-base.component';
 
 @Component({

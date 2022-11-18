@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { AuthService } from 'src/app/services/auth/auth.service';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-common-child-component-base',
