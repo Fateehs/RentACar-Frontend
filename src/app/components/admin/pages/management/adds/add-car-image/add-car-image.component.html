@@ -1,0 +1,99 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <h3 class="text-center">Resim Seç</h3>
+            <hr>
+            <div class="row">
+                <div class="col-md-6">
+                    <div ng2FileDrop [ngClass]="{'nv-file-over': hasBaseDropZoneOver}" (fileOver)="fileOverBase($event)"
+                        [uploader]="uploader" class="well my-drop-zone text-center" style="height: 250px;">
+                        Sürükle Bırak
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <input type="file" ng2FileSelect [uploader]="uploader" />
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6" style="margin-bottom: 40px">
+
+            <h3 class="text-center">Yükle</h3>
+            <hr>
+            <p>Yüklenecek resim sayısı: {{ uploader?.queue?.length }}</p>
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th width="50%">Name</th>
+                        <th>Size</th>
+                        <th>Progress</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of uploader.queue">
+                        <td><strong>{{ item?.file?.name }}</strong></td>
+                        <td *ngIf="uploader.options.isHTML5" nowrap>{{ item?.file?.size/1024/1024 | number:'.2' }} MB
+                        </td>
+                        <td *ngIf="uploader.options.isHTML5">
+                            <div class="progress" style="margin-bottom: 0;">
+                                <div class="progress-bar" role="progressbar"
+                                    [ngStyle]="{ 'width': item.progress + '%' }"></div>
+                            </div>
+                        </td>
+                        <td class="text-center">
+                            <span *ngIf="item.isSuccess"><i class="glyphicon glyphicon-ok"></i></span>
+                            <span *ngIf="item.isCancel"><i class="glyphicon glyphicon-ban-circle"></i></span>
+                            <span *ngIf="item.isError"><i class="glyphicon glyphicon-remove"></i></span>
+                        </td>
+                        <td nowrap>
+                            <button type="button" class="btn btn-success btn-xs" (click)="item.upload()"
+                                [disabled]="item.isReady || item.isUploading || item.isSuccess">
+                                <span class="glyphicon glyphicon-upload"></span> Yükle
+                            </button>
+                            <button type="button" class="btn btn-warning btn-xs" (click)="item.cancel()"
+                                [disabled]="!item.isUploading">
+                                <span class="glyphicon glyphicon-ban-circle"></span> İptal
+                            </button>
+                            <button type="button" class="btn btn-danger btn-xs" (click)="item.remove()">
+                                <span class="glyphicon glyphicon-trash"></span> Kaldır
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div>
+                <div>
+                    Queue progress:
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" [ngStyle]="{ 'width': uploader.progress + '%' }">
+                        </div>
+                    </div>
+                </div>
+                <button type="button" class="btn btn-success btn-s" (click)="uploader.uploadAll()"
+                    [disabled]="!uploader.getNotUploadedItems().length">
+                    <span class="glyphicon glyphicon-upload"></span> Hepsini Yükle
+                </button>
+                <button type="button" class="btn btn-warning btn-s" (click)="uploader.cancelAll()"
+                    [disabled]="!uploader.isUploading">
+                    <span class="glyphicon glyphicon-ban-circle"></span> Hepsini İptal Et
+                </button>
+                <button type="button" class="btn btn-danger btn-s" (click)="uploader.clearQueue()"
+                    [disabled]="!uploader.queue.length">
+                    <span class="glyphicon glyphicon-trash"></span> Hepsini Kaldır
+                </button>
+            </div>
+        </div>
+    </div>
+    <div>
+        <h3 class="text-center mt-2">Mevcut Resimler</h3>
+        <hr>
+        <div class="border">
+            <app-car-images-slider-by-car-id [currentCarIdFromParent]="currentCarId"></app-car-images-slider-by-car-id>
+        </div>
+    </div>
+
+</div>
