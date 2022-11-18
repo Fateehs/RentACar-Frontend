@@ -21,6 +21,8 @@
     "@auth0/angular-jwt": "^5.1.0",
     "bootstrap": "^5.2.2",
     "jquery": "^3.6.1",
+    "loader-utils": "^3.2.1",
+    "ng2-file-upload": "^1.4.0",
     "ngx-toastr": "^15.2.1",
     "rxjs": "~7.5.0",
     "toastr": "^2.1.4",
