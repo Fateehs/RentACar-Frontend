@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { CarDetailDTO } from '../models/entitymodels/car/car-detail-dto';
+import { CarDetailDTO } from '../models/entity-models/dto/car-detail-dto';
 
 
 @Pipe({

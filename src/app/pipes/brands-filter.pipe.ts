@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { Brand } from '../models/entitymodels/brand';
+import { Brand } from '../models/entity-models/entities/brand';
 
 @Pipe({
   name: 'brandsFilter',

@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { Color } from '../models/entitymodels/color';
+import { Color } from '../models/entity-models/entities/color';
 
 @Pipe({
   name: 'colorsFilter',
