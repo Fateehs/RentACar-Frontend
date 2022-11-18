@@ -1,1 +1,2 @@
-<p>route-to-add-car-image-page-button works!</p>
+<div type="button" (click)="routeToAddCarImagePageByCarId()" *ngIf="isAdmin()" [class]="classFromParent">{{innerHTML}}
+</div>

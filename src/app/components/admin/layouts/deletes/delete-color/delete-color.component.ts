@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Color } from 'src/app/models/entitymodels/color';
-import { AuthService } from 'src/app/services/auth/auth.service';
-import { ColorService } from 'src/app/services/color/color.service';
+import { Color } from 'src/app/models/entity-models/entities/color';
+import { AuthService } from 'src/app/services/auth.service';
+import { ColorService } from 'src/app/services/color.service';
 import { AdminChildComponentBaseComponent } from '../../../bases/admin-child-component-base/admin-child-component-base.component';
 
 @Component({

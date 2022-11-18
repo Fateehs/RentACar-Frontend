@@ -2,10 +2,11 @@ import { Component, Input, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import { AreYouSureYouWantToDeleteThisPicture } from 'src/app/models/constants/questions';
 import { BASE_URL } from 'src/app/models/constants/urls';
-import { CarImage } from 'src/app/models/entitymodels/car/carImage';
-import { AuthService } from 'src/app/services/auth/auth.service';
-import { CarImageService } from 'src/app/services/car-image/carimage.service';
-import { TemplatesService } from 'src/app/services/template/templates.service';
+import { CarImage } from 'src/app/models/entity-models/car/carImage';
+import { AuthService } from 'src/app/services/auth.service';
+import { CarImageService } from 'src/app/services/carimage.service';
+import { TemplatesService } from 'src/app/services/templates.service';
+
 import { AdminChildComponentBaseComponent } from '../../../bases/admin-child-component-base/admin-child-component-base.component';
 
 @Component({

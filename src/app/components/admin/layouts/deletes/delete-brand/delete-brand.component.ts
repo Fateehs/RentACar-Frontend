@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Brand } from 'src/app/models/entitymodels/brand';
-import { AuthService } from 'src/app/services/auth/auth.service';
-import { BrandService } from 'src/app/services/brand/brand.service';
+import { Brand } from 'src/app/models/entity-models/entities/brand';
+import { AuthService } from 'src/app/services/auth.service';
+import { BrandService } from 'src/app/services/brand.service';
 import { AdminChildComponentBaseComponent } from '../../../bases/admin-child-component-base/admin-child-component-base.component';
 
 @Component({

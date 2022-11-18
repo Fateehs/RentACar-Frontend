@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Car } from 'src/app/models/entitymodels/car/car';
-import { AuthService } from 'src/app/services/auth/auth.service';
-import { CarService } from 'src/app/services/car/car.service';
+import { Car } from 'src/app/models/entity-models/car/car';
+import { AuthService } from 'src/app/services/auth.service';
+import { CarService } from 'src/app/services/car.service';
 import { AdminChildComponentBaseComponent } from '../../../bases/admin-child-component-base/admin-child-component-base.component';
 
 @Component({

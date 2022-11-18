@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from 'src/app/services/auth/auth.service';
+import { AuthService } from 'src/app/services/auth.service';
 import { AdminChildComponentBaseComponent } from '../../bases/admin-child-component-base/admin-child-component-base.component';
 
 @Component({

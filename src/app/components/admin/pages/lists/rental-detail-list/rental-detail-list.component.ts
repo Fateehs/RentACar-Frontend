@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { RentalDetailDTO } from 'src/app/models/entitymodels/rental-detail-dto';
-import { RentalService } from 'src/app/services/rental/rental.service';
+import { RentalDetailDTO } from 'src/app/models/entity-models/dto/rental-detail-dto';
+import { RentalService } from 'src/app/services/rental.service';
+
 
 @Component({
   selector: 'app-rental-detail-list',
