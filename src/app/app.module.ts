@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FileUploadModule } from 'ng2-file-upload';
 
 import { ToastrModule } from 'ngx-toastr';
 import { AppRoutingModule } from './app-routing.module';
@@ -68,6 +69,7 @@ import { AuthInterceptor } from './interceptors/auth.interceptor';
 import { BrandsPipe } from './pipes/brands-filter.pipe';
 import { CarDetailsFilterPipe } from './pipes/car-details-filter.pipe';
 import { ColorsPipe } from './pipes/colors-filter.pipe';
+import { AddCarImageComponent } from './components/admin/pages/management/adds/add-car-image/add-car-image.component';
 
 @NgModule({
   declarations: [
@@ -125,7 +127,7 @@ import { ColorsPipe } from './pipes/colors-filter.pipe';
     ColorListComponent,
     CustomerListComponent,
     RentalDetailListComponent,
-    
+
     DeleteBrandComponent,
     DeleteCarImageComponent,
     DeleteCarComponent,
@@ -133,6 +135,7 @@ import { ColorsPipe } from './pipes/colors-filter.pipe';
     UpdateBrandComponent,
     UpdateCarComponent,
     UpdateColorComponent,
+    AddCarImageComponent,
   ],
   imports: [
     BrowserModule,
@@ -144,6 +147,7 @@ import { ColorsPipe } from './pipes/colors-filter.pipe';
     ToastrModule.forRoot({
       positionClass: 'toast-bottom-right',
     }),
+    FileUploadModule,
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
