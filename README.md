@@ -6,8 +6,8 @@ This is the frontend of my project for renting a car. You can rent (think of it 
 
 # Contributions
 
-Thanks to [Engin Demiroğ](http://https://github.com/engindemirog) and 
-[Mustafa Aktoz](http://https://github.com/MustafaAktoz) for their contributions.
+Thanks to [Engin Demiroğ](https://github.com/engindemirog) and 
+[Mustafa Aktoz](https://github.com/MustafaAktoz) for their contributions.
 
 ## Associated Project
 
