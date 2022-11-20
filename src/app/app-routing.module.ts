@@ -21,7 +21,9 @@ import { RegisterComponent } from './components/public/pages/register/register.c
 import { PayComponent } from './components/user/pages/pay/pay.component';
 import { ProfileComponent } from './components/user/pages/profile/profile.component';
 import { RentComponent } from './components/user/pages/rent/rent.component';
+import { AdminGuard } from './guards/admin.guard';
 import { LoginGuard } from './guards/login.guard';
+import { UserGuard } from './guards/user.guard';
 import { CarId } from './models/constants/entity-ids';
 import {
   AddBrandPath,
@@ -47,30 +49,23 @@ import {
 
 const routes: Routes = [
   { path: HomePagePath, component: CarDetailsComponent },
-  { path: CarDetailsPath, component: CarDetailsComponent },
-  {
-    path: CarDetailsByBrandIdPath + ':brandId',
-    component: CarDetailsComponent,
-  },
-  {
-    path: CarDetailsByColorIdPath + ':colorId',
-    component: CarDetailsComponent,
-  },
+  { path: CarDetailsByBrandIdPath + ':brandId', component: CarDetailsComponent,},
+  { path: CarDetailsByColorIdPath + ':colorId', component: CarDetailsComponent,},
   { path: CarDetailByIdPath + ':' + CarId, component: CarDetailComponent },
-  { path: RentByCarIdPath + ':' + CarId, component: RentComponent },
-  { path: PayPath, component: PayComponent },
+  { path: RentByCarIdPath + ':' + CarId, component: RentComponent, canActivate: [UserGuard] },
+  { path: PayPath, component: PayComponent , canActivate: [UserGuard]},
   { path: RegisterPath, component: RegisterComponent },
   { path: LoginPath, component: LoginComponent },
   { path: ProfilePath, component: ProfileComponent, canActivate: [LoginGuard] },
-  { path: BrandListPath, component: BrandListComponent },
-  { path: ColorListPath, component: ColorListComponent },
-  { path: CustomerListPath, component: CustomerListComponent },
-  { path: CarDetailListPath, component: CarDetailListComponent },
-  { path: RentalDetailListPath, component: RentalDetailListComponent },
-  { path: AddCarPath, component: AddCarComponent },
-  { path: AddBrandPath, component: AddBrandComponent },
-  { path: AddColorPath, component: AddColorComponent },
-  { path: AddCarImageByCarIdPath + ":" + CarId, component: AddCarImageComponent },
+  { path: BrandListPath, component: BrandListComponent, canActivate: [AdminGuard] },
+  { path: ColorListPath, component: ColorListComponent, canActivate: [AdminGuard] },
+  { path: CustomerListPath, component: CustomerListComponent, canActivate: [AdminGuard] },
+  { path: CarDetailListPath, component: CarDetailListComponent, canActivate: [AdminGuard] },
+  { path: RentalDetailListPath, component: RentalDetailListComponent, canActivate: [AdminGuard] },
+  { path: AddCarPath, component: AddCarComponent, canActivate: [AdminGuard] },
+  { path: AddBrandPath, component: AddBrandComponent, canActivate: [AdminGuard] },
+  { path: AddColorPath, component: AddColorComponent, canActivate: [AdminGuard] },
+  { path: AddCarImageByCarIdPath + ":" + CarId, component: AddCarImageComponent, canActivate: [AdminGuard] },
 ];
 
 @NgModule({
