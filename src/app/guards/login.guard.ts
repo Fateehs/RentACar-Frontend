@@ -8,6 +8,8 @@ import {
 } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { Observable } from 'rxjs';
+import { PleaseLogin } from '../models/constants/messages';
+import { LoginPath } from '../models/constants/paths';
 import { AuthService } from '../services/auth.service';
 
 @Injectable({
@@ -30,8 +32,8 @@ export class LoginGuard implements CanActivate {
     if (this.authService.loggedIn()) {
       return true;
     } else {
-      this.router.navigate(['login']);
-      this.toastrService.warning('Please sign in!');
+      this.router.navigate([LoginPath]);
+      this.toastrService.warning(PleaseLogin);
       return false;
     }
   }
